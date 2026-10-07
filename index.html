@@ -3,366 +3,658 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>แบบทดสอบวิทยาการคำนวณ ป.5</title>
+
+<title>แบบทดสอบวิทยาการคำนวณ ป.4-ป.6</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
 
-* {
-    box-sizing: border-box;
+*{
+    box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    font-family: 'Kanit', sans-serif;
-    min-height: 100vh;
-    color: #21402a;
+body{
+    margin:0;
+    font-family:'Kanit',sans-serif;
+    min-height:100vh;
+    color:#21482b;
+    overflow-x:hidden;
+
     background:
-        linear-gradient(rgba(19,82,43,.18),rgba(19,82,43,.18)),
-        linear-gradient(180deg,#8ed8a4 0%,#dff5cf 48%,#91c66e 100%);
-    overflow-x: hidden;
+        linear-gradient(
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.10)
+        ),
+        linear-gradient(
+            180deg,
+            #7fd3e8 0%,
+            #bdebc7 45%,
+            #75b957 100%
+        );
 }
 
-/* ฉากธรรมชาติ */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -3;
+/* =========================
+   ฉากธรรมชาติ
+========================= */
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-5;
+
     background:
-        radial-gradient(circle at 15% 15%,rgba(255,255,255,.8) 0 45px,transparent 46px),
-        radial-gradient(circle at 80% 12%,rgba(255,255,255,.65) 0 60px,transparent 61px),
-        linear-gradient(180deg,#8ed8e8 0%,#bdecc5 45%,#7db957 100%);
+        radial-gradient(
+            circle at 15% 13%,
+            rgba(255,255,255,.85) 0 45px,
+            transparent 46px
+        ),
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(255,255,255,.65) 0 55px,
+            transparent 56px
+        );
 }
 
 /* ภูเขา */
-body::after {
-    content: "";
-    position: fixed;
-    left: -10%;
-    right: -10%;
-    bottom: -80px;
-    height: 330px;
-    z-index: -2;
+
+body:after{
+    content:"";
+    position:fixed;
+    left:-10%;
+    right:-10%;
+    bottom:-70px;
+    height:320px;
+    z-index:-4;
+
     background:
-        linear-gradient(135deg,transparent 25%,#6aa653 26% 48%,transparent 49%),
-        linear-gradient(225deg,transparent 25%,#578e49 26% 48%,transparent 49%);
-    background-size: 50% 100%;
-    opacity: .75;
+        linear-gradient(
+            135deg,
+            transparent 28%,
+            #6ca554 29% 49%,
+            transparent 50%
+        ),
+        linear-gradient(
+            225deg,
+            transparent 28%,
+            #548e46 29% 49%,
+            transparent 50%
+        );
+
+    background-size:50% 100%;
 }
 
-/* ใบไม้ลอย */
-.leaf {
-    position: fixed;
-    font-size: 30px;
-    opacity: .5;
-    animation: floatLeaf 8s infinite ease-in-out;
-    z-index: -1;
+/* ใบไม้ */
+
+.leaf{
+    position:fixed;
+    z-index:-1;
+    font-size:32px;
+    opacity:.55;
+    animation:floatLeaf 8s infinite ease-in-out;
 }
 
-.leaf1 {left:5%;top:25%;}
-.leaf2 {right:7%;top:35%;animation-delay:2s;}
-.leaf3 {left:12%;bottom:15%;animation-delay:4s;}
-.leaf4 {right:15%;bottom:20%;animation-delay:1s;}
-
-@keyframes floatLeaf {
-    0%,100% {transform:translateY(0) rotate(0deg);}
-    50% {transform:translateY(-25px) rotate(15deg);}
+.leaf1{
+    left:5%;
+    top:25%;
 }
 
-.container {
-    width: min(940px,94%);
-    margin: 25px auto;
+.leaf2{
+    right:7%;
+    top:30%;
+    animation-delay:2s;
 }
 
-/* Header */
-.header {
-    text-align: center;
-    padding: 28px 20px;
-    border-radius: 30px;
-    background: linear-gradient(145deg,#ffffffee,#dff6dfdd);
+.leaf3{
+    left:12%;
+    bottom:16%;
+    animation-delay:4s;
+}
+
+.leaf4{
+    right:15%;
+    bottom:20%;
+    animation-delay:1s;
+}
+
+.leaf5{
+    left:45%;
+    top:12%;
+    animation-delay:3s;
+}
+
+@keyframes floatLeaf{
+    0%,100%{
+        transform:translateY(0) rotate(0deg);
+    }
+
+    50%{
+        transform:translateY(-25px) rotate(15deg);
+    }
+}
+
+/* =========================
+   Container
+========================= */
+
+.container{
+    width:min(950px,94%);
+    margin:20px auto 40px;
+}
+
+/* =========================
+   Header
+========================= */
+
+.header{
+    text-align:center;
+    padding:25px 20px;
+
+    border-radius:30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.97),
+            rgba(226,247,224,.94)
+        );
+
     box-shadow:
-        0 20px 35px rgba(36,91,45,.25),
-        inset 0 2px 5px #fff;
-    border: 2px solid rgba(255,255,255,.8);
+        0 20px 40px rgba(34,92,45,.25),
+        inset 0 2px 5px white;
+
+    border:2px solid rgba(255,255,255,.9);
 }
 
-.header .icon {
-    font-size: 65px;
-    filter: drop-shadow(0 8px 5px rgba(0,0,0,.2));
+.header-icon{
+    font-size:65px;
+    filter:drop-shadow(0 8px 5px rgba(0,0,0,.18));
 }
 
-.header h1 {
-    margin: 5px 0;
-    font-size: clamp(25px,5vw,40px);
-    color: #176b35;
-    text-shadow: 2px 3px 0 #b9dfb4;
+.header h1{
+    margin:5px 0;
+
+    font-size:
+        clamp(25px,5vw,40px);
+
+    color:#176b35;
+
+    text-shadow:
+        2px 3px 0 #c4e4bc;
 }
 
-.header p {
-    margin: 4px;
-    font-size: 18px;
-    color: #52735a;
+.header p{
+    margin:5px;
+    font-size:18px;
+    color:#52735a;
 }
 
-/* Card */
-.card {
-    margin-top: 22px;
-    padding: 30px;
-    border-radius: 28px;
-    background: rgba(255,255,255,.93);
+/* =========================
+   Card
+========================= */
+
+.card{
+    margin-top:20px;
+    padding:28px;
+
+    border-radius:28px;
+
+    background:rgba(255,255,255,.95);
+
     box-shadow:
-        0 18px 35px rgba(42,92,43,.25),
-        inset 0 2px 3px white;
-    border: 2px solid rgba(255,255,255,.9);
+        0 18px 40px rgba(38,91,45,.25),
+        inset 0 2px 4px white;
+
+    border:2px solid rgba(255,255,255,.9);
 }
 
-/* หน้าเริ่ม */
-input {
-    width: 100%;
-    padding: 15px 18px;
-    margin: 8px 0 18px;
-    border: 2px solid #b8d9b4;
-    border-radius: 16px;
-    font-family: inherit;
-    font-size: 17px;
-    outline: none;
-    transition: .25s;
-    background:#f8fff6;
+/* =========================
+   Input
+========================= */
+
+label{
+    display:block;
+    margin-top:10px;
+    margin-bottom:5px;
+    font-weight:500;
 }
 
-input:focus {
-    border-color:#3f9c56;
-    box-shadow:0 0 0 4px #bce6c4;
-}
+input{
+    width:100%;
+    padding:15px 18px;
 
-.class-buttons {
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-bottom:22px;
-}
+    border:2px solid #b9d8b3;
+    border-radius:16px;
 
-.class-btn {
-    flex:1;
-    min-width:100px;
-    padding:14px;
-    border:0;
-    border-radius:15px;
-    background:#e0f2df;
-    color:#286036;
     font-family:inherit;
     font-size:17px;
-    cursor:pointer;
-    box-shadow:0 5px 0 #b6d5b1;
-    transition:.15s;
+
+    background:#f8fff6;
+    outline:none;
+
+    transition:.25s;
 }
 
-.class-btn:hover {
+input:focus{
+    border-color:#3f9c56;
+
+    box-shadow:
+        0 0 0 4px #c9e9ca;
+}
+
+/* =========================
+   Class Buttons
+========================= */
+
+.class-buttons{
+    display:flex;
+    gap:12px;
+    margin:10px 0 22px;
+}
+
+.class-btn{
+    flex:1;
+
+    padding:16px 8px;
+
+    border:0;
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #eff9ec,
+            #d7ead2
+        );
+
+    color:#286036;
+
+    font-family:inherit;
+    font-size:18px;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 6px 0 #b5cfad,
+        0 10px 15px rgba(43,100,51,.10);
+
+    transition:.2s;
+}
+
+.class-btn:hover{
+    transform:translateY(-3px);
+}
+
+.class-btn.active{
+    color:white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #55b967,
+            #27783c
+        );
+
+    box-shadow:
+        0 6px 0 #18562b,
+        0 10px 18px rgba(31,99,46,.25);
+
     transform:translateY(-2px);
 }
 
-.class-btn.active {
-    background:linear-gradient(145deg,#4caf61,#267b3d);
-    color:white;
-    box-shadow:0 5px 0 #195c2b;
+.difficulty{
+    display:block;
+    font-size:14px;
+    margin-top:3px;
+    opacity:.85;
 }
+
+/* =========================
+   Buttons
+========================= */
 
 .start-btn,
 .next-btn,
 .submit-btn,
-.restart-btn {
+.restart-btn{
     width:100%;
+
     border:0;
     border-radius:18px;
+
     padding:16px;
+
     font-family:inherit;
     font-size:19px;
     font-weight:600;
-    cursor:pointer;
+
     color:white;
-    background:linear-gradient(145deg,#55b967,#24763a);
+
+    background:
+        linear-gradient(
+            145deg,
+            #59bd68,
+            #24753a
+        );
+
     box-shadow:
         0 7px 0 #18552b,
-        0 12px 20px rgba(31,99,46,.2);
+        0 12px 20px rgba(31,99,46,.20);
+
+    cursor:pointer;
+
     transition:.15s;
 }
 
 .start-btn:hover,
 .next-btn:hover,
 .submit-btn:hover,
-.restart-btn:hover {
+.restart-btn:hover{
     transform:translateY(-2px);
 }
 
 .start-btn:active,
 .next-btn:active,
-.submit-btn:active,
-.restart-btn:active {
+.restart-btn:active{
     transform:translateY(4px);
-    box-shadow:0 3px 0 #18552b;
+
+    box-shadow:
+        0 3px 0 #18552b;
 }
 
-/* Quiz */
-.hidden {
-    display:none !important;
-}
+/* =========================
+   Quiz Top
+========================= */
 
-.quiz-top {
+.quiz-top{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    gap:15px;
+
+    gap:10px;
+
     margin-bottom:12px;
 }
 
-.question-number {
+.question-number{
+    font-size:18px;
     font-weight:600;
     color:#28733c;
-    font-size:18px;
 }
 
-.score-small {
-    background:#e1f4dc;
+.score-small{
     padding:8px 15px;
     border-radius:20px;
+    background:#e3f4de;
     color:#34713e;
 }
 
-.progress {
+/* =========================
+   Progress
+========================= */
+
+.progress{
     width:100%;
     height:15px;
-    border-radius:20px;
+
     background:#e3f0df;
+
+    border-radius:20px;
+
     overflow:hidden;
+
     margin-bottom:25px;
 }
 
-.progress-bar {
+.progress-bar{
     height:100%;
     width:0%;
+
     border-radius:20px;
-    background:linear-gradient(90deg,#49a85c,#a7d85d);
+
+    background:
+        linear-gradient(
+            90deg,
+            #49a85c,
+            #a6d85d
+        );
+
     transition:.4s;
 }
 
-.question {
+/* =========================
+   Question
+========================= */
+
+.question{
     font-size:23px;
     font-weight:500;
     line-height:1.6;
+
     margin-bottom:20px;
+
     color:#254e2d;
 }
 
-.option {
+/* =========================
+   Options
+========================= */
+
+.option{
     display:block;
+
     width:100%;
+
     padding:16px 18px;
+
     margin:12px 0;
+
     border:2px solid #cfe4c9;
+
     border-radius:18px;
-    background:linear-gradient(145deg,#ffffff,#eff8ec);
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #eff8ec
+        );
+
     cursor:pointer;
+
     font-size:17px;
+
     text-align:left;
+
     font-family:inherit;
+
     color:#294d30;
-    box-shadow:0 5px 0 #d0e1ca;
+
+    box-shadow:
+        0 5px 0 #d0e1ca;
+
     transition:.2s;
 }
 
-.option:hover {
+.option:hover{
     transform:translateY(-2px);
+
     border-color:#6db579;
+
     background:#f0faec;
 }
 
-.option.selected {
-    background:linear-gradient(145deg,#d8f2d8,#b6dfb8);
+.option.selected{
+    background:
+        linear-gradient(
+            145deg,
+            #d8f2d8,
+            #b6dfb8
+        );
+
     border-color:#3d9850;
-    box-shadow:0 5px 0 #72ad78;
+
+    box-shadow:
+        0 5px 0 #72ad78;
+
     color:#155c29;
+
     font-weight:600;
 }
 
-.next-area {
+.next-area{
     margin-top:25px;
 }
 
-/* Result */
-.result {
+/* =========================
+   Result
+========================= */
+
+.result{
     text-align:center;
 }
 
-.trophy {
+.trophy{
     font-size:85px;
+
     animation:bounce 1.5s infinite;
 }
 
-@keyframes bounce {
-    0%,100% {transform:translateY(0);}
-    50% {transform:translateY(-12px);}
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
 }
 
-.result h2 {
+.result h2{
     font-size:32px;
     color:#247139;
 }
 
-.final-score {
+.final-score{
     font-size:60px;
     font-weight:700;
+
     color:#21823d;
-    text-shadow:2px 3px 0 #c7e6bd;
+
+    text-shadow:
+        2px 3px 0 #c7e6bd;
 }
 
-.result-message {
+.result-message{
     font-size:20px;
     margin:15px 0 25px;
 }
 
-.detail {
+.detail{
     background:#eff9eb;
+
     padding:18px;
+
     border-radius:18px;
+
     text-align:left;
+
     margin-bottom:20px;
+
+    line-height:1.9;
 }
 
-.teacher {
-    margin-top:20px;
-    text-align:center;
-    color:#54715a;
+/* =========================
+   Difficulty Badge
+========================= */
+
+.badge{
+    display:inline-block;
+
+    padding:6px 14px;
+
+    margin-bottom:12px;
+
+    border-radius:20px;
+
+    background:#e0f3dc;
+
+    color:#32743c;
+
     font-size:14px;
 }
 
-/* responsive */
-@media(max-width:600px) {
-    .container {
+/* =========================
+   Teacher
+========================= */
+
+.teacher{
+    margin-top:20px;
+
+    text-align:center;
+
+    color:#54715a;
+
+    font-size:14px;
+}
+
+/* =========================
+   Hidden
+========================= */
+
+.hidden{
+    display:none !important;
+}
+
+/* =========================
+   Mobile
+========================= */
+
+@media(max-width:600px){
+
+    .container{
         width:94%;
-        margin:12px auto;
+        margin:10px auto 30px;
     }
 
-    .card {
+    .header{
+        padding:20px 12px;
+        border-radius:23px;
+    }
+
+    .header-icon{
+        font-size:50px;
+    }
+
+    .card{
         padding:20px 16px;
         border-radius:22px;
     }
 
-    .header {
-        padding:20px 12px;
+    .class-buttons{
+        gap:7px;
     }
 
-    .header .icon {
-        font-size:50px;
+    .class-btn{
+        padding:13px 4px;
+        font-size:16px;
     }
 
-    .question {
+    .difficulty{
+        font-size:12px;
+    }
+
+    .question{
         font-size:20px;
     }
 
-    .option {
+    .option{
         font-size:16px;
         padding:14px;
+    }
+
+    .final-score{
+        font-size:52px;
     }
 }
 </style>
@@ -370,175 +662,599 @@ input:focus {
 
 <body>
 
+<!-- ใบไม้ตกแต่ง -->
 <div class="leaf leaf1">🍃</div>
 <div class="leaf leaf2">🌿</div>
 <div class="leaf leaf3">🍂</div>
 <div class="leaf leaf4">🍃</div>
+<div class="leaf leaf5">🌱</div>
+
 
 <div class="container">
 
-    <div class="header">
-        <div class="icon">🌳</div>
-        <h1>วิทยาการคำนวณ ป.5</h1>
-        <p>แบบทดสอบความรู้ • ระดับปานกลาง • 20 ข้อ</p>
+<!-- =========================
+     HEADER
+========================= -->
+
+<div class="header">
+
+    <div class="header-icon">
+        🌳
     </div>
 
-    <!-- START -->
-    <div id="startScreen" class="card">
+    <h1>
+        แบบทดสอบวิทยาการคำนวณ
+    </h1>
 
-        <h2>🌱 ข้อมูลผู้เข้าสอบ</h2>
+    <p>
+        ชั้นประถมศึกษาปีที่ 4 - 6
+    </p>
 
-        <label>ชื่อ - นามสกุล</label>
-        <input id="studentName"
-               type="text"
-               placeholder="กรุณากรอกชื่อและนามสกุล">
+    <p>
+        🌿 ระบบปรับระดับความยากตามชั้นเรียน 🌿
+    </p>
 
-        <label>เลือกระดับชั้น</label>
+</div>
 
-        <div class="class-buttons">
-            <button class="class-btn" onclick="selectClass(this,'ป.4')">ป.4</button>
-            <button class="class-btn active" onclick="selectClass(this,'ป.5')">ป.5</button>
-            <button class="class-btn" onclick="selectClass(this,'ป.6')">ป.6</button>
-        </div>
 
-        <button class="start-btn" onclick="startQuiz()">
-            🚀 เริ่มทำแบบทดสอบ
+<!-- =========================
+     START SCREEN
+========================= -->
+
+<div id="startScreen" class="card">
+
+    <h2>
+        🌱 ข้อมูลผู้เข้าสอบ
+    </h2>
+
+    <label>
+        ชื่อ - นามสกุล
+    </label>
+
+    <input
+        id="studentName"
+        type="text"
+        placeholder="กรุณากรอกชื่อและนามสกุล"
+    >
+
+
+    <label>
+        เลือกระดับชั้น
+    </label>
+
+    <div class="class-buttons">
+
+        <button
+            class="class-btn"
+            onclick="selectClass(this,'ป.4')"
+        >
+            🌱 ป.4
+            <span class="difficulty">
+                ความยาก 30%
+            </span>
         </button>
 
-        <div class="teacher">
-            ผู้พัฒนาแบบทดสอบ<br>
-            <b>ครูปรเมศวร์ ฟองลม</b>
-        </div>
-    </div>
 
-    <!-- QUIZ -->
-    <div id="quizScreen" class="card hidden">
-
-        <div class="quiz-top">
-            <div id="questionNumber" class="question-number">
-                ข้อ 1 / 20
-            </div>
-
-            <div class="score-small">
-                🌿 คะแนน <span id="currentScore">0</span>
-            </div>
-        </div>
-
-        <div class="progress">
-            <div id="progressBar" class="progress-bar"></div>
-        </div>
-
-        <div id="question" class="question"></div>
-
-        <div id="options"></div>
-
-        <div class="next-area">
-            <button id="nextButton"
-                    class="next-btn"
-                    onclick="nextQuestion()">
-                ข้อต่อไป ➜
-            </button>
-        </div>
-
-    </div>
-
-    <!-- RESULT -->
-    <div id="resultScreen" class="card hidden result">
-
-        <div class="trophy">🏆</div>
-
-        <h2>ทำแบบทดสอบเสร็จแล้ว!</h2>
-
-        <div id="resultName"></div>
-
-        <div class="final-score">
-            <span id="finalScore">0</span> / 20
-        </div>
-
-        <div id="resultMessage" class="result-message"></div>
-
-        <div class="detail">
-            <b>📊 สรุปผลการทำแบบทดสอบ</b><br><br>
-            👤 ผู้เข้าสอบ: <span id="detailName"></span><br>
-            🎓 ชั้นเรียน: <span id="detailClass"></span><br>
-            ✅ ตอบถูก: <span id="correctCount"></span> ข้อ<br>
-            ❌ ตอบผิด: <span id="wrongCount"></span> ข้อ
-        </div>
-
-        <button class="restart-btn" onclick="restartQuiz()">
-            🔄 ทำแบบทดสอบอีกครั้ง
+        <button
+            class="class-btn active"
+            onclick="selectClass(this,'ป.5')"
+        >
+            🌿 ป.5
+            <span class="difficulty">
+                ความยาก 50%
+            </span>
         </button>
 
-        <div class="teacher">
-            🌿 แบบทดสอบวิทยาการคำนวณ ป.5<br>
-            ผู้พัฒนา: <b>ครูปรเมศวร์ ฟองลม</b>
-        </div>
+
+        <button
+            class="class-btn"
+            onclick="selectClass(this,'ป.6')"
+        >
+            🌳 ป.6
+            <span class="difficulty">
+                ความยาก 70%
+            </span>
+        </button>
+
+    </div>
+
+
+    <button
+        class="start-btn"
+        onclick="startQuiz()"
+    >
+        🚀 เริ่มทำแบบทดสอบ
+    </button>
+
+
+    <div class="teacher">
+
+        ผู้พัฒนาแบบทดสอบ<br>
+
+        <b>
+            ครูปรเมศวร์ ฟองลม
+        </b>
 
     </div>
 
 </div>
 
+
+<!-- =========================
+     QUIZ SCREEN
+========================= -->
+
+<div
+    id="quizScreen"
+    class="card hidden"
+>
+
+    <div class="quiz-top">
+
+        <div
+            id="questionNumber"
+            class="question-number"
+        >
+            ข้อ 1 / 20
+        </div>
+
+
+        <div class="score-small">
+
+            🌿 คะแนน
+            <span id="currentScore">
+                0
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <div
+        id="difficultyBadge"
+        class="badge"
+    >
+        🌿 ป.5 ความยาก 50%
+    </div>
+
+
+    <div class="progress">
+
+        <div
+            id="progressBar"
+            class="progress-bar"
+        ></div>
+
+    </div>
+
+
+    <div
+        id="question"
+        class="question"
+    ></div>
+
+
+    <div
+        id="options"
+    ></div>
+
+
+    <div class="next-area">
+
+        <button
+            id="nextButton"
+            class="next-btn"
+            onclick="nextQuestion()"
+        >
+            ข้อต่อไป ➜
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     RESULT SCREEN
+========================= -->
+
+<div
+    id="resultScreen"
+    class="card hidden result"
+>
+
+    <div class="trophy">
+        🏆
+    </div>
+
+
+    <h2>
+        ทำแบบทดสอบเสร็จแล้ว!
+    </h2>
+
+
+    <div id="resultName"></div>
+
+
+    <div class="final-score">
+
+        <span id="finalScore">
+            0
+        </span>
+
+        / 20
+
+    </div>
+
+
+    <div
+        id="resultMessage"
+        class="result-message"
+    ></div>
+
+
+    <div class="detail">
+
+        <b>
+            📊 สรุปผลการทำแบบทดสอบ
+        </b>
+
+        <br><br>
+
+        👤 ผู้เข้าสอบ:
+        <span id="detailName"></span>
+
+        <br>
+
+        🎓 ชั้นเรียน:
+        <span id="detailClass"></span>
+
+        <br>
+
+        📈 ระดับความยาก:
+        <span id="detailDifficulty"></span>
+
+        <br>
+
+        ✅ ตอบถูก:
+        <span id="correctCount"></span>
+        ข้อ
+
+        <br>
+
+        ❌ ตอบผิด:
+        <span id="wrongCount"></span>
+        ข้อ
+
+        <br>
+
+        🎯 คิดเป็น:
+        <span id="percentScore"></span>%
+
+    </div>
+
+
+    <button
+        class="restart-btn"
+        onclick="restartQuiz()"
+    >
+        🔄 ทำแบบทดสอบอีกครั้ง
+    </button>
+
+
+    <div class="teacher">
+
+        🌿 แบบทดสอบวิทยาการคำนวณ
+
+        <br>
+
+        ผู้พัฒนา:
+        <b>
+            ครูปรเมศวร์ ฟองลม
+        </b>
+
+    </div>
+
+</div>
+
+</div>
+
+
 <script>
 
-const questions = [
+/* =========================================================
+   ข้อสอบ ป.4 ความยาก 30%
+========================================================= */
+
+const questionsP4 = [
 
 {
-q:"ข้อใดอธิบายความหมายของ “อัลกอริทึม” ได้ถูกต้องที่สุด",
+q:"ข้อใดหมายถึงการทำงานตามลำดับขั้นตอน",
 options:[
-"ก. โปรแกรมคอมพิวเตอร์ชนิดหนึ่ง",
-"ข. ขั้นตอนการแก้ปัญหาอย่างเป็นลำดับ",
-"ค. อุปกรณ์ที่ใช้เก็บข้อมูล",
-"ง. เครือข่ายสำหรับเชื่อมต่ออินเทอร์เน็ต"
+"ก. ทำอะไรก็ได้ตามใจ",
+"ข. ทำงานตามขั้นตอนที่กำหนด",
+"ค. เล่นเกมคอมพิวเตอร์",
+"ง. เปิดเพลง"
 ],
 answer:1
 },
 
 {
-q:"หากต้องการแปรงฟัน ขั้นตอนใดควรทำเป็นอันดับแรก",
+q:"ถ้าต้องการล้างมือ ขั้นตอนแรกควรทำอะไร",
 options:[
-"ก. บ้วนปาก",
-"ข. แปรงฟันด้วยยาสีฟัน",
-"ค. บีบยาสีฟันใส่แปรง",
-"ง. เก็บแปรงสีฟัน"
+"ก. เช็ดมือ",
+"ข. ปิดน้ำ",
+"ค. เปิดน้ำ",
+"ง. ใส่สบู่"
 ],
 answer:2
 },
 
 {
-q:"ถ้าต้องการให้หุ่นยนต์เดินไปข้างหน้า 3 ก้าว แล้วเลี้ยวขวา คำสั่งใดถูกต้อง",
+q:"ข้อใดเป็นอุปกรณ์คอมพิวเตอร์",
+options:[
+"ก. โต๊ะ",
+"ข. จาน",
+"ค. แป้นพิมพ์",
+"ง. รองเท้า"
+],
+answer:2
+},
+
+{
+q:"เมาส์ใช้สำหรับทำอะไร",
+options:[
+"ก. พิมพ์ตัวอักษร",
+"ข. ควบคุมตัวชี้บนหน้าจอ",
+"ค. ฟังเสียง",
+"ง. พิมพ์ภาพ"
+],
+answer:1
+},
+
+{
+q:"ข้อใดเป็นข้อมูล",
+options:[
+"ก. ชื่อนักเรียน",
+"ข. เก้าอี้",
+"ค. โต๊ะ",
+"ง. ประตู"
+],
+answer:0
+},
+
+{
+q:"ก่อนใช้ข้อมูลจากอินเทอร์เน็ตควรทำอะไร",
+options:[
+"ก. เชื่อทันที",
+"ข. ตรวจสอบข้อมูล",
+"ค. ลบทิ้ง",
+"ง. ส่งต่อทันที"
+],
+answer:1
+},
+
+{
+q:"รหัสผ่านควรมีลักษณะอย่างไร",
+options:[
+"ก. เดาง่าย",
+"ข. ใช้ชื่อของตนเอง",
+"ค. คาดเดายาก",
+"ง. ใช้ 123456"
+],
+answer:2
+},
+
+{
+q:"ถ้าต้องการวาดรูปในคอมพิวเตอร์ควรใช้อุปกรณ์ใด",
+options:[
+"ก. เมาส์",
+"ข. ลำโพง",
+"ค. เครื่องพิมพ์",
+"ง. ไมโครโฟน"
+],
+answer:0
+},
+
+{
+q:"ข้อใดเป็นการใช้อินเทอร์เน็ตอย่างปลอดภัย",
+options:[
+"ก. บอกที่อยู่ให้คนแปลกหน้า",
+"ข. บอกรหัสผ่าน",
+"ค. ไม่เปิดเผยข้อมูลส่วนตัว",
+"ง. นัดพบคนแปลกหน้า"
+],
+answer:2
+},
+
+{
+q:"ถ้าต้องการค้นหาข้อมูลควรใช้อะไร",
+options:[
+"ก. เครื่องมือค้นหา",
+"ข. เครื่องคิดเลข",
+"ค. เครื่องพิมพ์",
+"ง. กล้อง"
+],
+answer:0
+},
+
+{
+q:"ข้อใดเป็นตัวอย่างของคำสั่ง",
+options:[
+"ก. เดินไปข้างหน้า",
+"ข. ต้นไม้",
+"ค. หนังสือ",
+"ง. บ้าน"
+],
+answer:0
+},
+
+{
+q:"การทำงานซ้ำหมายถึงอะไร",
+options:[
+"ก. ทำครั้งเดียว",
+"ข. ทำหลายครั้งตามคำสั่ง",
+"ค. หยุดทำงาน",
+"ง. ลบข้อมูล"
+],
+answer:1
+},
+
+{
+q:"ถ้าต้องการให้ตัวละครเดิน 5 ก้าว ควรใช้คำสั่งใด",
+options:[
+"ก. เดิน 5 ก้าว",
+"ข. หมุน",
+"ค. หยุด",
+"ง. พูด"
+],
+answer:0
+},
+
+{
+q:"ข้อใดเป็นประโยชน์ของคอมพิวเตอร์",
+options:[
+"ก. ช่วยทำงานได้รวดเร็ว",
+"ข. ทำให้ต้องทำงานมากขึ้นเสมอ",
+"ค. ทำให้ข้อมูลหาย",
+"ง. ทำให้ไม่มีข้อมูล"
+],
+answer:0
+},
+
+{
+q:"เมื่อใช้คอมพิวเตอร์เสร็จควรทำอย่างไร",
+options:[
+"ก. ปิดเครื่องอย่างถูกวิธี",
+"ข. ดึงปลั๊กทันที",
+"ค. ทิ้งเครื่องไว้",
+"ง. กดทุกปุ่ม"
+],
+answer:0
+},
+
+{
+q:"ข้อใดเป็นข้อมูลส่วนตัว",
+options:[
+"ก. สีที่ชอบ",
+"ข. รหัสผ่าน",
+"ค. ชื่อสัตว์",
+"ง. ชื่อดอกไม้"
+],
+answer:1
+},
+
+{
+q:"ถ้ามีคนแปลกหน้าขอรหัสผ่าน ควรทำอย่างไร",
+options:[
+"ก. ให้ทันที",
+"ข. บอกเพื่อน",
+"ค. ไม่บอก",
+"ง. โพสต์ออนไลน์"
+],
+answer:2
+},
+
+{
+q:"ข้อใดเป็นการเรียงลำดับที่ถูกต้องในการทำอาหาร",
+options:[
+"ก. กิน → เตรียมอาหาร → ปรุง",
+"ข. เตรียม → ปรุง → กิน",
+"ค. ปรุง → ซื้อ → กิน",
+"ง. กิน → ซื้อ → เตรียม"
+],
+answer:1
+},
+
+{
+q:"ถ้าคอมพิวเตอร์ทำงานผิดปกติควรทำอย่างไร",
+options:[
+"ก. กดปุ่มทุกปุ่ม",
+"ข. แจ้งครูหรือผู้ใหญ่",
+"ค. ทุบเครื่อง",
+"ง. ดึงสายไฟ"
+],
+answer:1
+},
+
+{
+q:"ข้อใดเป็นการใช้เทคโนโลยีอย่างรับผิดชอบ",
+options:[
+"ก. ใช้บัญชีของเพื่อน",
+"ข. เปิดเผยข้อมูลผู้อื่น",
+"ค. เคารพผู้อื่น",
+"ง. ขโมยรูปภาพ"
+],
+answer:2
+}
+
+];
+
+
+/* =========================================================
+   ข้อสอบ ป.5 ความยาก 50%
+========================================================= */
+
+const questionsP5 = [
+
+{
+q:"ข้อใดอธิบายความหมายของอัลกอริทึมได้ถูกต้องที่สุด",
+options:[
+"ก. โปรแกรมชนิดหนึ่ง",
+"ข. ขั้นตอนการแก้ปัญหาอย่างเป็นลำดับ",
+"ค. อุปกรณ์เก็บข้อมูล",
+"ง. เครือข่ายอินเทอร์เน็ต"
+],
+answer:1
+},
+
+{
+q:"ถ้าต้องการแปรงฟัน ขั้นตอนใดควรทำก่อน",
+options:[
+"ก. บ้วนปาก",
+"ข. แปรงฟัน",
+"ค. บีบยาสีฟัน",
+"ง. เก็บแปรง"
+],
+answer:2
+},
+
+{
+q:"หุ่นยนต์ต้องเดิน 3 ก้าว แล้วเลี้ยวขวา คำสั่งใดถูกต้อง",
 options:[
 "ก. เลี้ยวขวา → เดิน 3 ก้าว",
 "ข. เดิน 3 ก้าว → เลี้ยวขวา",
-"ค. เดิน 1 ก้าว → เลี้ยวซ้าย → เดิน 2 ก้าว",
-"ง. เลี้ยวซ้าย → เดิน 3 ก้าว"
+"ค. เลี้ยวซ้าย → เดิน 3 ก้าว",
+"ง. หยุด → เลี้ยวขวา"
 ],
 answer:1
 },
 
 {
-q:"ข้อใดเป็นการใช้ “การทำซ้ำ” ในการเขียนโปรแกรม",
+q:"ข้อใดเป็นการใช้การทำซ้ำ",
 options:[
 "ก. ถ้าฝนตกให้กางร่ม",
-"ข. เดินไปข้างหน้า 5 ก้าว",
+"ข. เดินไป 5 ก้าว",
 "ค. กระโดด 3 ครั้ง",
-"ง. ถ้าคะแนนมากกว่า 50 ให้แสดงคำว่า “ผ่าน”"
+"ง. ถ้าคะแนนมากกว่า 50 ให้ผ่าน"
 ],
 answer:2
 },
 
 {
-q:"หากต้องการเขียนโปรแกรมให้ตัวละครพูดว่า “สวัสดี” 5 ครั้ง วิธีใดเหมาะสมที่สุด",
+q:"ต้องการให้ตัวละครพูดว่า “สวัสดี” 5 ครั้ง ควรใช้วิธีใด",
 options:[
-"ก. เขียนคำสั่งพูด 5 คำสั่ง",
+"ก. เขียนคำสั่ง 5 ครั้ง",
 "ข. ใช้คำสั่งทำซ้ำ 5 ครั้ง",
-"ค. ใช้คำสั่งหยุดโปรแกรม",
-"ง. ใช้คำสั่งสุ่มตัวเลข"
+"ค. หยุดโปรแกรม",
+"ง. สุ่มคำสั่ง"
 ],
 answer:1
 },
 
 {
-q:"“ถ้าฝนตก ให้ถือร่ม มิฉะนั้นให้เดินตามปกติ” เป็นโครงสร้างการทำงานแบบใด",
+q:"“ถ้าฝนตกให้ถือร่ม มิฉะนั้นเดินตามปกติ” เป็นโครงสร้างใด",
 options:[
 "ก. การทำซ้ำ",
 "ข. การเรียงลำดับ",
@@ -549,62 +1265,62 @@ answer:2
 },
 
 {
-q:"หากโปรแกรมทำงานไม่ตรงตามที่ต้องการ นักเรียนควรทำอย่างไรเป็นอันดับแรก",
+q:"ถ้าโปรแกรมทำงานไม่ถูกต้องควรทำอย่างไร",
 options:[
-"ก. ลบโปรแกรมทั้งหมด",
-"ข. ปิดคอมพิวเตอร์ทันที",
-"ค. ตรวจสอบขั้นตอนและคำสั่งที่เขียน",
-"ง. เปลี่ยนคอมพิวเตอร์เครื่องใหม่"
+"ก. ลบโปรแกรม",
+"ข. ปิดเครื่อง",
+"ค. ตรวจสอบคำสั่ง",
+"ง. เปลี่ยนคอมพิวเตอร์"
 ],
 answer:2
 },
 
 {
-q:"ข้อใดเป็นตัวอย่างของ “ข้อมูล”",
+q:"ข้อใดเป็นข้อมูล",
 options:[
 "ก. ความคิดของคอมพิวเตอร์",
-"ข. ชื่อ อายุ และคะแนนของนักเรียน",
+"ข. ชื่อ อายุ และคะแนน",
 "ค. ปุ่มเปิดเครื่อง",
-"ง. สายไฟของคอมพิวเตอร์"
+"ง. สายไฟ"
 ],
 answer:1
 },
 
 {
-q:"หากต้องการหาค่าเฉลี่ยคะแนนของนักเรียน ควรดำเนินการอย่างไร",
+q:"การหาค่าเฉลี่ยคะแนนควรทำอย่างไร",
 options:[
-"ก. นำคะแนนทั้งหมดมาบวกกันแล้วหารด้วยจำนวนนักเรียน",
-"ข. นำคะแนนสูงสุดมาลบคะแนนต่ำสุด",
-"ค. เลือกเฉพาะคะแนนที่มากที่สุด",
-"ง. นับจำนวนตัวอักษรในชื่อของนักเรียน"
+"ก. บวกคะแนนแล้วหารด้วยจำนวนข้อมูล",
+"ข. เลือกคะแนนสูงสุด",
+"ค. เลือกคะแนนต่ำสุด",
+"ง. นับตัวอักษร"
 ],
 answer:0
 },
 
 {
-q:"ข้อใดเป็นข้อมูลที่เหมาะสมสำหรับสร้างกราฟแสดง “ผลไม้ที่นักเรียนชอบ”",
+q:"ข้อมูลใดเหมาะสำหรับสร้างกราฟผลไม้ที่นักเรียนชอบ",
 options:[
 "ก. ชื่อครู",
-"ข. จำนวนครั้งที่นักเรียนเลือกผลไม้แต่ละชนิด",
-"ค. รหัสผ่านของนักเรียน",
-"ง. หมายเลขโทรศัพท์ของผู้ปกครอง"
+"ข. จำนวนผู้เลือกผลไม้แต่ละชนิด",
+"ค. รหัสผ่าน",
+"ง. เบอร์โทรศัพท์"
 ],
 answer:1
 },
 
 {
-q:"ถ้านักเรียนได้รับข้อความจากคนที่ไม่รู้จักและขอชื่อ ที่อยู่ และเบอร์โทรศัพท์ ควรทำอย่างไร",
+q:"คนแปลกหน้าขอชื่อ ที่อยู่ และเบอร์โทรศัพท์ ควรทำอย่างไร",
 options:[
-"ก. ส่งข้อมูลให้ทันที",
+"ก. ส่งทันที",
 "ข. ส่งเฉพาะที่อยู่",
-"ค. ไม่ส่งข้อมูลส่วนตัวและแจ้งผู้ใหญ่ที่ไว้ใจ",
-"ง. ขอข้อมูลของอีกฝ่ายกลับ"
+"ค. ไม่ส่งและแจ้งผู้ใหญ่",
+"ง. ขอข้อมูลเขากลับ"
 ],
 answer:2
 },
 
 {
-q:"ข้อใดเป็นรหัสผ่านที่ปลอดภัยกว่าข้ออื่น",
+q:"ข้อใดเป็นรหัสผ่านที่ปลอดภัยกว่า",
 options:[
 "ก. 123456",
 "ข. password",
@@ -615,254 +1331,776 @@ answer:3
 },
 
 {
-q:"การนำรูปภาพของผู้อื่นไปใช้บนอินเทอร์เน็ตโดยไม่ขออนุญาต อาจเกี่ยวข้องกับเรื่องใด",
+q:"การนำรูปของผู้อื่นมาใช้โดยไม่ขออนุญาตเกี่ยวข้องกับเรื่องใด",
 options:[
 "ก. ลิขสิทธิ์",
 "ข. การคำนวณ",
 "ค. การเขียนโปรแกรม",
-"ง. การจัดเรียงข้อมูล"
+"ง. การจัดข้อมูล"
 ],
 answer:0
 },
 
 {
-q:"เมื่อนักเรียนพบข่าวที่น่าสงสัยบนอินเทอร์เน็ต ควรทำอย่างไร",
+q:"พบข่าวที่น่าสงสัยบนอินเทอร์เน็ตควรทำอย่างไร",
 options:[
-"ก. แชร์ต่อทันที",
-"ข. ตรวจสอบข้อมูลจากแหล่งที่น่าเชื่อถือ",
-"ค. เพิ่มข้อความให้ดูน่าสนใจ",
-"ง. ส่งให้เพื่อนทุกคน"
+"ก. แชร์ทันที",
+"ข. ตรวจสอบแหล่งข้อมูล",
+"ค. เพิ่มข้อความ",
+"ง. ส่งให้ทุกคน"
 ],
 answer:1
 },
 
 {
-q:"ข้อใดเป็นประโยชน์ของการใช้โปรแกรมตารางคำนวณ",
+q:"โปรแกรมตารางคำนวณมีประโยชน์อย่างไร",
 options:[
-"ก. ใช้คำนวณและจัดการข้อมูลได้สะดวก",
-"ข. ใช้แทนเครื่องปรับอากาศ",
-"ค. ใช้สร้างสัญญาณอินเทอร์เน็ต",
-"ง. ใช้เพิ่มความเร็วของคอมพิวเตอร์"
+"ก. คำนวณและจัดการข้อมูล",
+"ข. สร้างอินเทอร์เน็ต",
+"ค. เพิ่มความเร็วเครื่อง",
+"ง. ใช้แทนเครื่องปรับอากาศ"
 ],
 answer:0
 },
 
 {
-q:"หากต้องการค้นหาข้อมูลเรื่อง “การปลูกต้นไม้” ให้ได้ผลตรงกับความต้องการมากขึ้น คำค้นใดเหมาะสมที่สุด",
+q:"คำค้นใดเฉพาะเจาะจงที่สุดในการค้นหาวิธีปลูกมะเขือเทศ",
 options:[
 "ก. ต้นไม้",
-"ข. ทุกอย่างเกี่ยวกับต้นไม้",
-"ค. วิธีปลูกต้นมะเขือเทศในกระถาง",
-"ง. สิ่งที่เกี่ยวกับธรรมชาติทั้งหมด"
+"ข. ธรรมชาติ",
+"ค. วิธีปลูกมะเขือเทศในกระถาง",
+"ง. พืช"
 ],
 answer:2
 },
 
 {
-q:"ข้อใดแสดงถึงการคิดอย่างเป็นขั้นตอนในการแก้ปัญหา",
+q:"ข้อใดแสดงถึงการคิดอย่างเป็นขั้นตอน",
 options:[
-"ก. ทดลองทำไปเรื่อย ๆ โดยไม่วางแผน",
-"ข. วิเคราะห์ปัญหา วางแผน ลงมือทำ และตรวจสอบผล",
-"ค. ให้เพื่อนทำแทนทั้งหมด",
-"ง. เลือกวิธีแรกที่คิดได้โดยไม่ตรวจสอบ"
+"ก. ทำโดยไม่วางแผน",
+"ข. วิเคราะห์ วางแผน ลงมือทำ และตรวจสอบ",
+"ค. ให้เพื่อนทำ",
+"ง. เลือกวิธีแรกทันที"
 ],
 answer:1
 },
 
 {
-q:"หากต้องการให้ตัวละครเคลื่อนที่เป็นรูปสี่เหลี่ยม โดยแต่ละด้านยาวเท่ากัน ควรใช้แนวคิดใดช่วยลดจำนวนคำสั่ง",
+q:"การให้ตัวละครเดินเป็นรูปสี่เหลี่ยม ควรใช้แนวคิดใดลดจำนวนคำสั่ง",
 options:[
 "ก. การทำซ้ำ",
 "ข. การสุ่ม",
-"ค. การลบข้อมูล",
+"ค. การลบ",
 "ง. การค้นหา"
 ],
 answer:0
 },
 
 {
-q:"นักเรียนพบว่าการคำนวณคะแนนรวมในโปรแกรมผิด เพราะลืมนำคะแนนวิชาหนึ่งมารวม นักเรียนควรทำอย่างไร",
+q:"หากสูตรคำนวณคะแนนผิดควรทำอย่างไร",
 options:[
-"ก. ยอมรับว่าคำนวณผิดและไม่แก้ไข",
-"ข. ตรวจสอบข้อมูลและแก้ไขสูตรการคำนวณ",
-"ค. ลบคะแนนทั้งหมด",
+"ก. ไม่แก้ไข",
+"ข. ตรวจสอบและแก้สูตร",
+"ค. ลบคะแนน",
 "ง. เปลี่ยนชื่อไฟล์"
 ],
 answer:1
 },
 
 {
-q:"ข้อใดเป็นการใช้เทคโนโลยีอย่างรับผิดชอบมากที่สุด",
+q:"ข้อใดเป็นการใช้เทคโนโลยีอย่างรับผิดชอบ",
 options:[
-"ก. ใช้บัญชีของเพื่อนโดยไม่ได้รับอนุญาต",
-"ข. เผยแพร่ข้อมูลส่วนตัวของผู้อื่น",
-"ค. ตรวจสอบข้อมูลก่อนแชร์และเคารพลิขสิทธิ์",
-"ง. ดาวน์โหลดไฟล์จากเว็บไซต์ที่ไม่รู้จักโดยไม่ตรวจสอบ"
+"ก. ใช้บัญชีเพื่อน",
+"ข. เผยแพร่ข้อมูลผู้อื่น",
+"ค. ตรวจสอบก่อนแชร์และเคารพลิขสิทธิ์",
+"ง. ดาวน์โหลดทุกไฟล์"
 ],
 answer:2
 }
 
 ];
 
+
+/* =========================================================
+   ข้อสอบ ป.6 ความยาก 70%
+========================================================= */
+
+const questionsP6 = [
+
+{
+q:"นักเรียนต้องการสร้างโปรแกรมคำนวณค่าเฉลี่ยคะแนนหลายวิชา ขั้นตอนใดควรทำก่อน",
+options:[
+"ก. แสดงผลทันที",
+"ข. วิเคราะห์ข้อมูลและวิธีคำนวณ",
+"ค. ลบข้อมูล",
+"ง. ปิดโปรแกรม"
+],
+answer:1
+},
+
+{
+q:"ถ้าโปรแกรมต้องตรวจสอบว่าคะแนนผ่านเกณฑ์ 50 คะแนนหรือไม่ ควรใช้โครงสร้างใด",
+options:[
+"ก. การทำซ้ำ",
+"ข. การตัดสินใจ",
+"ค. การสุ่ม",
+"ง. การเรียงข้อมูล"
+],
+answer:1
+},
+
+{
+q:"โปรแกรมต้องแสดงเลข 1 ถึง 100 วิธีใดเหมาะสมที่สุด",
+options:[
+"ก. เขียนคำสั่ง 100 ครั้ง",
+"ข. ใช้การทำซ้ำ",
+"ค. ใช้คำสั่งหยุด",
+"ง. ใช้การสุ่ม"
+],
+answer:1
+},
+
+{
+q:"หากผลลัพธ์ของโปรแกรมผิดทั้งที่สูตรถูกต้อง ควรตรวจสอบสิ่งใดเพิ่มเติม",
+options:[
+"ก. สีพื้นหลัง",
+"ข. ข้อมูลนำเข้า",
+"ค. ขนาดหน้าจอ",
+"ง. เสียงลำโพง"
+],
+answer:1
+},
+
+{
+q:"ข้อใดเป็นตัวอย่างของการแยกปัญหาใหญ่เป็นปัญหาย่อย",
+options:[
+"ก. ทำทุกอย่างพร้อมกัน",
+"ข. แบ่งงานเป็นส่วน ๆ แล้วแก้ทีละส่วน",
+"ค. เลิกแก้ปัญหา",
+"ง. สุ่มวิธีแก้"
+],
+answer:1
+},
+
+{
+q:"ถ้าต้องการค้นหาข้อมูลที่น่าเชื่อถือ ควรพิจารณาสิ่งใดมากที่สุด",
+options:[
+"ก. สีของเว็บไซต์",
+"ข. แหล่งที่มาและความน่าเชื่อถือ",
+"ค. จำนวนรูปภาพ",
+"ง. ขนาดตัวอักษร"
+],
+answer:1
+},
+
+{
+q:"เพื่อนส่งข่าวว่าโรงเรียนจะหยุดเรียน แต่ไม่มีแหล่งอ้างอิง ควรทำอย่างไร",
+options:[
+"ก. แชร์ทันที",
+"ข. ตรวจสอบประกาศจากโรงเรียน",
+"ค. เพิ่มข้อความเอง",
+"ง. ลบเพื่อน"
+],
+answer:1
+},
+
+{
+q:"ถ้าต้องการป้องกันบัญชีออนไลน์จากการถูกเดา ควรทำอย่างไร",
+options:[
+"ก. ใช้รหัสผ่านเดียวทุกเว็บไซต์",
+"ข. ใช้รหัสผ่านที่เดายากและไม่เปิดเผย",
+"ค. ใช้วันเกิด",
+"ง. ใช้ชื่อเล่น"
+],
+answer:1
+},
+
+{
+q:"การใช้ข้อมูลของบุคคลอื่นโดยไม่ได้รับอนุญาตอาจก่อให้เกิดปัญหาใด",
+options:[
+"ก. ปัญหาด้านสิทธิและความเป็นส่วนตัว",
+"ข. ทำให้คอมพิวเตอร์เร็วขึ้น",
+"ค. เพิ่มพื้นที่จัดเก็บ",
+"ง. ทำให้ข้อมูลแม่นยำขึ้น"
+],
+answer:0
+},
+
+{
+q:"หากต้องออกแบบอัลกอริทึมสำหรับการยืมหนังสือจากห้องสมุด ขั้นตอนใดไม่จำเป็น",
+options:[
+"ก. ตรวจสอบสมาชิก",
+"ข. ตรวจสอบหนังสือ",
+"ค. บันทึกการยืม",
+"ง. เปลี่ยนสีผนังห้องสมุด"
+],
+answer:3
+},
+
+{
+q:"ถ้าต้องการให้โปรแกรมทำงานซ้ำจนกว่าจะถึงเงื่อนไขที่กำหนด ควรใช้แนวคิดใด",
+options:[
+"ก. การทำซ้ำแบบมีเงื่อนไข",
+"ข. การแสดงผล",
+"ค. การรับข้อมูลเพียงครั้งเดียว",
+"ง. การลบข้อมูล"
+],
+answer:0
+},
+
+{
+q:"ถ้าตัวละครเดินผิดทิศทางหลายครั้ง สาเหตุที่ควรตรวจสอบก่อนคืออะไร",
+options:[
+"ก. คำสั่งทิศทาง",
+"ข. สีพื้นหลัง",
+"ค. เพลงประกอบ",
+"ง. รูปตัวละคร"
+],
+answer:0
+},
+
+{
+q:"นักเรียนต้องการเปรียบเทียบคะแนนของเพื่อน 30 คน วิธีใดเหมาะสม",
+options:[
+"ก. จดจำทั้งหมดด้วยตนเอง",
+"ข. ใช้ตารางจัดเก็บและวิเคราะห์ข้อมูล",
+"ค. ลบข้อมูลบางส่วน",
+"ง. สุ่มคะแนน"
+],
+answer:1
+},
+
+{
+q:"ข้อใดเป็นการตรวจสอบความถูกต้องของข้อมูล",
+options:[
+"ก. ตรวจว่าข้อมูลครบและตรงกับแหล่งที่มา",
+"ข. เปลี่ยนสีตัวอักษร",
+"ค. เพิ่มรูปภาพ",
+"ง. เปลี่ยนชื่อไฟล์"
+],
+answer:0
+},
+
+{
+q:"หากมีข้อมูลนักเรียนซ้ำกันหลายรายการ ควรทำอย่างไร",
+options:[
+"ก. เพิ่มข้อมูลซ้ำ",
+"ข. ตรวจสอบและลบข้อมูลซ้ำ",
+"ค. ลบข้อมูลทั้งหมด",
+"ง. ไม่สนใจ"
+],
+answer:1
+},
+
+{
+q:"ข้อใดแสดงถึงการคิดเชิงนามธรรม",
+options:[
+"ก. สนใจรายละเอียดทุกอย่างเท่า ๆ กัน",
+"ข. เลือกเฉพาะข้อมูลสำคัญต่อการแก้ปัญหา",
+"ค. จดทุกอย่างโดยไม่คัดกรอง",
+"ง. ไม่ใช้ข้อมูล"
+],
+answer:1
+},
+
+{
+q:"หากต้องสร้างแผนผังการเดินทางจากห้องเรียนไปห้องสมุด สิ่งใดควรระบุ",
+options:[
+"ก. เส้นทางและจุดสำคัญ",
+"ข. คะแนนสอบ",
+"ค. รหัสผ่าน",
+"ง. ชื่อผู้ใช้งาน"
+],
+answer:0
+},
+
+{
+q:"เมื่ออัลกอริทึมมีขั้นตอนซ้ำกันหลายครั้ง ควรปรับปรุงอย่างไร",
+options:[
+"ก. เพิ่มขั้นตอนซ้ำ",
+"ข. ใช้โครงสร้างการทำซ้ำ",
+"ค. ลบขั้นตอนทั้งหมด",
+"ง. เพิ่มข้อมูลที่ไม่เกี่ยวข้อง"
+],
+answer:1
+},
+
+{
+q:"ข้อใดเป็นวิธีแก้ปัญหาโปรแกรมที่เป็นระบบที่สุด",
+options:[
+"ก. เดาสาเหตุแล้วแก้ทันที",
+"ข. ตรวจสอบข้อมูล คำสั่ง และผลลัพธ์ทีละขั้น",
+"ค. ลบโปรแกรมทั้งหมด",
+"ง. เปลี่ยนเครื่องคอมพิวเตอร์"
+],
+answer:1
+},
+
+{
+q:"ถ้านักเรียนต้องนำข้อมูลจากหลายเว็บไซต์มาใช้ทำรายงาน ควรทำอย่างไร",
+options:[
+"ก. คัดลอกทั้งหมดโดยไม่ตรวจสอบ",
+"ข. เปรียบเทียบข้อมูลและอ้างอิงแหล่งที่มา",
+"ค. เลือกเว็บไซต์แรกเสมอ",
+"ง. ลบชื่อผู้เขียน"
+],
+answer:1
+}
+
+];
+
+
+/* =========================================================
+   ตัวแปรระบบ
+========================================================= */
+
 let currentQuestion = 0;
 let score = 0;
 let selectedAnswer = null;
+
 let studentName = "";
 let studentClass = "ป.5";
+let questions = questionsP5;
 
-function selectClass(button, cls) {
-    document.querySelectorAll(".class-btn")
-        .forEach(btn => btn.classList.remove("active"));
+
+/* =========================================================
+   เลือกชั้น
+========================================================= */
+
+function selectClass(button, cls){
+
+    document
+        .querySelectorAll(".class-btn")
+        .forEach(btn =>
+            btn.classList.remove("active")
+        );
 
     button.classList.add("active");
+
     studentClass = cls;
+
 }
 
-function startQuiz() {
 
-    studentName = document.getElementById("studentName").value.trim();
+/* =========================================================
+   เลือกชุดข้อสอบ
+========================================================= */
 
-    if (!studentName) {
-        alert("กรุณากรอกชื่อและนามสกุลก่อนเริ่มทำแบบทดสอบ");
-        return;
+function loadQuestions(){
+
+    if(studentClass === "ป.4"){
+
+        questions = questionsP4;
+
     }
+
+    else if(studentClass === "ป.5"){
+
+        questions = questionsP5;
+
+    }
+
+    else if(studentClass === "ป.6"){
+
+        questions = questionsP6;
+
+    }
+
+}
+
+
+/* =========================================================
+   เริ่มสอบ
+========================================================= */
+
+function startQuiz(){
+
+    studentName =
+        document
+        .getElementById("studentName")
+        .value
+        .trim();
+
+
+    if(!studentName){
+
+        alert(
+            "กรุณากรอกชื่อและนามสกุลก่อนเริ่มทำแบบทดสอบ"
+        );
+
+        return;
+
+    }
+
+
+    loadQuestions();
+
 
     currentQuestion = 0;
     score = 0;
 
-    document.getElementById("startScreen").classList.add("hidden");
-    document.getElementById("quizScreen").classList.remove("hidden");
+
+    document
+        .getElementById("startScreen")
+        .classList.add("hidden");
+
+
+    document
+        .getElementById("quizScreen")
+        .classList.remove("hidden");
+
 
     showQuestion();
+
 }
 
-function showQuestion() {
+
+/* =========================================================
+   แสดงข้อสอบ
+========================================================= */
+
+function showQuestion(){
 
     selectedAnswer = null;
 
-    const q = questions[currentQuestion];
 
-    document.getElementById("questionNumber").textContent =
+    const q =
+        questions[currentQuestion];
+
+
+    document
+        .getElementById("questionNumber")
+        .textContent =
         `ข้อ ${currentQuestion + 1} / ${questions.length}`;
 
-    document.getElementById("currentScore").textContent = score;
 
-    document.getElementById("question").textContent = q.q;
+    document
+        .getElementById("currentScore")
+        .textContent =
+        score;
 
-    const optionsDiv = document.getElementById("options");
+
+    document
+        .getElementById("question")
+        .textContent =
+        q.q;
+
+
+    /* Badge */
+
+    let difficulty = "50%";
+
+    if(studentClass === "ป.4"){
+        difficulty = "30%";
+    }
+
+    if(studentClass === "ป.6"){
+        difficulty = "70%";
+    }
+
+    document
+        .getElementById("difficultyBadge")
+        .textContent =
+        `🌿 ${studentClass} ความยาก ${difficulty}`;
+
+
+    /* ตัวเลือก */
+
+    const optionsDiv =
+        document.getElementById("options");
+
+
     optionsDiv.innerHTML = "";
 
-    q.options.forEach((option, index) => {
 
-        const button = document.createElement("button");
+    q.options.forEach(
+        (option,index)=>{
 
-        button.className = "option";
-        button.textContent = option;
+            const button =
+                document.createElement("button");
 
-        button.onclick = () => selectAnswer(index, button);
 
-        optionsDiv.appendChild(button);
-    });
+            button.className =
+                "option";
+
+
+            button.textContent =
+                option;
+
+
+            button.onclick =
+                ()=>{
+                    selectAnswer(index,button);
+                };
+
+
+            optionsDiv.appendChild(button);
+
+        }
+    );
+
+
+    /* Progress */
 
     const progress =
-        ((currentQuestion) / questions.length) * 100;
+        ((currentQuestion) /
+        questions.length) * 100;
 
-    document.getElementById("progressBar").style.width =
+
+    document
+        .getElementById("progressBar")
+        .style.width =
         progress + "%";
+
+
+    /* ปุ่ม */
 
     const nextButton =
         document.getElementById("nextButton");
 
-    if (currentQuestion === questions.length - 1) {
-        nextButton.textContent = "🏆 ส่งคำตอบ";
-    } else {
-        nextButton.textContent = "ข้อต่อไป ➜";
+
+    if(
+        currentQuestion ===
+        questions.length - 1
+    ){
+
+        nextButton.textContent =
+            "🏆 ส่งคำตอบ";
+
     }
+
+    else{
+
+        nextButton.textContent =
+            "ข้อต่อไป ➜";
+
+    }
+
 }
 
-function selectAnswer(index, button) {
+
+/* =========================================================
+   เลือกคำตอบ
+========================================================= */
+
+function selectAnswer(index,button){
 
     selectedAnswer = index;
 
-    document.querySelectorAll(".option")
-        .forEach(btn => btn.classList.remove("selected"));
+
+    document
+        .querySelectorAll(".option")
+        .forEach(btn =>
+            btn.classList.remove("selected")
+        );
+
 
     button.classList.add("selected");
+
 }
 
-function nextQuestion() {
 
-    if (selectedAnswer === null) {
-        alert("กรุณาเลือกคำตอบก่อนครับ");
+/* =========================================================
+   ข้อต่อไป
+========================================================= */
+
+function nextQuestion(){
+
+    if(selectedAnswer === null){
+
+        alert(
+            "กรุณาเลือกคำตอบก่อนครับ"
+        );
+
         return;
+
     }
 
-    if (selectedAnswer === questions[currentQuestion].answer) {
+
+    if(
+        selectedAnswer ===
+        questions[currentQuestion].answer
+    ){
+
         score++;
+
     }
+
 
     currentQuestion++;
 
-    if (currentQuestion < questions.length) {
+
+    if(
+        currentQuestion <
+        questions.length
+    ){
+
         showQuestion();
-    } else {
-        showResult();
+
     }
+
+    else{
+
+        showResult();
+
+    }
+
 }
 
-function showResult() {
 
-    document.getElementById("quizScreen")
+/* =========================================================
+   แสดงผลคะแนน
+========================================================= */
+
+function showResult(){
+
+    document
+        .getElementById("quizScreen")
         .classList.add("hidden");
 
-    document.getElementById("resultScreen")
+
+    document
+        .getElementById("resultScreen")
         .classList.remove("hidden");
 
-    document.getElementById("finalScore").textContent = score;
 
-    document.getElementById("resultName").innerHTML =
-        `🌿 <b>${studentName}</b>`;
+    const total =
+        questions.length;
 
-    document.getElementById("detailName").textContent =
-        studentName;
 
-    document.getElementById("detailClass").textContent =
-        studentClass;
+    const percent =
+        Math.round(
+            (score / total) * 100
+        );
 
-    document.getElementById("correctCount").textContent =
+
+    document
+        .getElementById("finalScore")
+        .textContent =
         score;
 
-    document.getElementById("wrongCount").textContent =
-        questions.length - score;
+
+    document
+        .getElementById("resultName")
+        .innerHTML =
+        `🌿 <b>${studentName}</b>`;
+
+
+    document
+        .getElementById("detailName")
+        .textContent =
+        studentName;
+
+
+    document
+        .getElementById("detailClass")
+        .textContent =
+        studentClass;
+
+
+    let difficulty = "50%";
+
+
+    if(studentClass === "ป.4"){
+        difficulty = "30%";
+    }
+
+    if(studentClass === "ป.6"){
+        difficulty = "70%";
+    }
+
+
+    document
+        .getElementById("detailDifficulty")
+        .textContent =
+        difficulty;
+
+
+    document
+        .getElementById("correctCount")
+        .textContent =
+        score;
+
+
+    document
+        .getElementById("wrongCount")
+        .textContent =
+        total - score;
+
+
+    document
+        .getElementById("percentScore")
+        .textContent =
+        percent;
+
 
     let message = "";
 
-    if (score >= 18) {
-        message = "🌟 ยอดเยี่ยมมาก! มีความเข้าใจวิทยาการคำนวณเป็นอย่างดี";
-    } else if (score >= 15) {
-        message = "😊 ดีมาก! เข้าใจเนื้อหาได้ดี";
-    } else if (score >= 10) {
-        message = "🌱 ผ่านเกณฑ์ ลองทบทวนเนื้อหาเพิ่มเติมอีกนิด";
-    } else {
-        message = "📚 ควรทบทวนบทเรียนและลองทำแบบทดสอบอีกครั้ง";
+
+    if(percent >= 90){
+
+        message =
+            "🌟 ยอดเยี่ยมมาก! มีความเข้าใจวิทยาการคำนวณเป็นอย่างดี";
+
     }
 
-    document.getElementById("resultMessage").textContent =
+    else if(percent >= 75){
+
+        message =
+            "😊 ดีมาก! มีความเข้าใจเนื้อหาในระดับดี";
+
+    }
+
+    else if(percent >= 50){
+
+        message =
+            "🌱 ผ่านเกณฑ์ ควรทบทวนเนื้อหาเพิ่มเติม";
+
+    }
+
+    else{
+
+        message =
+            "📚 ควรทบทวนบทเรียนและลองทำแบบทดสอบอีกครั้ง";
+
+    }
+
+
+    document
+        .getElementById("resultMessage")
+        .textContent =
         message;
+
 }
 
-function restartQuiz() {
 
-    document.getElementById("resultScreen")
+/* =========================================================
+   เริ่มใหม่
+========================================================= */
+
+function restartQuiz(){
+
+    document
+        .getElementById("resultScreen")
         .classList.add("hidden");
 
-    document.getElementById("startScreen")
+
+    document
+        .getElementById("startScreen")
         .classList.remove("hidden");
 
-    document.getElementById("studentName").value = "";
+
+    document
+        .getElementById("studentName")
+        .value = "";
+
 
     score = 0;
+
     currentQuestion = 0;
+
+    selectedAnswer = null;
+
 }
 
 </script>
