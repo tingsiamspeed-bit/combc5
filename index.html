@@ -3,96 +3,87 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>วิชาวิทยาการคำนวณ ภาคเรียนที่ 1 ปี 2569</title>
+
+<title>แบบทดสอบวิชาวิทยาการคำนวณ ปี 2569</title>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap');
 
 *{
     box-sizing:border-box;
-    margin:0;
-    padding:0;
 }
 
 body{
+    margin:0;
     font-family:'Kanit',sans-serif;
+    background:
+        linear-gradient(
+            180deg,
+            #b8e8ff 0%,
+            #dff6ff 45%,
+            #b8e994 100%
+        );
     min-height:100vh;
-    background:linear-gradient(
-        180deg,
-        #81d8ff 0%,
-        #c8efff 35%,
-        #c8eaa8 68%,
-        #579943 100%
-    );
-    color:#24452b;
+    color:#234;
+    overflow-x:hidden;
 }
 
-/* ================= BACKGROUND ================= */
+/* ---------------- BACKGROUND ---------------- */
 
 body::before{
     content:"";
     position:fixed;
-    width:300px;
-    height:120px;
-    background:rgba(255,255,255,.7);
-    border-radius:100px;
-    top:70px;
-    left:-80px;
-    filter:blur(5px);
-    box-shadow:
-        180px 25px 0 rgba(255,255,255,.65),
-        800px 30px 0 rgba(255,255,255,.65),
-        1000px 10px 0 rgba(255,255,255,.5);
+    left:-5%;
+    bottom:0;
+    width:110%;
+    height:170px;
+    background:#78b85a;
+    border-radius:50% 50% 0 0;
     z-index:-2;
 }
 
 body::after{
     content:"";
     position:fixed;
-    left:0;
-    right:0;
+    right:-10%;
     bottom:0;
-    height:180px;
-    background:#4f913f;
-    clip-path:polygon(
-        0 65%,
-        12% 35%,
-        25% 60%,
-        38% 25%,
-        52% 60%,
-        65% 30%,
-        80% 65%,
-        92% 35%,
-        100% 60%,
-        100% 100%,
-        0 100%
-    );
+    width:80%;
+    height:120px;
+    background:#5e9c4a;
+    border-radius:50% 50% 0 0;
+    z-index:-3;
+}
+
+.cloud{
+    position:fixed;
+    background:white;
+    border-radius:100px;
+    opacity:.7;
     z-index:-1;
 }
 
-.leaf{
-    position:fixed;
-    font-size:45px;
-    opacity:.55;
-    animation:float 6s ease-in-out infinite;
-    pointer-events:none;
+.cloud1{
+    width:180px;
+    height:55px;
+    top:70px;
+    left:5%;
 }
 
-.leaf1{top:15%;left:3%;}
-.leaf2{top:30%;right:4%;animation-delay:1s;}
-.leaf3{bottom:20%;left:6%;animation-delay:2s;}
-.leaf4{bottom:10%;right:8%;animation-delay:3s;}
-
-@keyframes float{
-    0%,100%{
-        transform:translateY(0) rotate(0deg);
-    }
-    50%{
-        transform:translateY(-20px) rotate(8deg);
-    }
+.cloud2{
+    width:220px;
+    height:65px;
+    top:150px;
+    right:7%;
 }
 
-/* ================= MAIN ================= */
+.cloud3{
+    width:140px;
+    height:45px;
+    top:280px;
+    left:30%;
+}
+
+/* ---------------- CONTAINER ---------------- */
 
 .container{
     width:95%;
@@ -100,206 +91,173 @@ body::after{
     margin:25px auto;
 }
 
+/* ---------------- HEADER ---------------- */
+
 .header{
     background:rgba(255,255,255,.94);
-    border-radius:30px;
-    padding:28px 20px;
+    border-radius:28px;
+    padding:30px 20px;
     text-align:center;
     box-shadow:
-        0 15px 35px rgba(25,90,35,.25),
+        0 12px 30px rgba(0,0,0,.15),
         inset 0 1px 0 white;
     border:3px solid rgba(255,255,255,.8);
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 
-.header-icon{
-    font-size:65px;
-    filter:drop-shadow(0 8px 5px rgba(0,0,0,.2));
+.header .icon{
+    font-size:55px;
 }
 
 .header h1{
-    color:#216b35;
+    margin:5px 0;
     font-size:32px;
+    color:#176b3a;
     font-weight:700;
 }
 
 .header h2{
-    color:#437d39;
-    font-size:24px;
-    margin-top:3px;
+    margin:5px 0;
+    font-size:22px;
+    color:#2c7a42;
 }
 
 .header p{
-    color:#47704b;
-    margin-top:8px;
-    font-size:17px;
+    margin:8px 0;
+    color:#555;
 }
+
+/* ---------------- CARD ---------------- */
 
 .card{
-    background:rgba(255,255,255,.97);
-    border-radius:30px;
-    padding:30px;
-    box-shadow:
-        0 20px 45px rgba(31,89,37,.28),
-        inset 0 1px 0 white;
-    border:2px solid rgba(255,255,255,.9);
+    background:rgba(255,255,255,.95);
+    border-radius:25px;
+    padding:28px;
+    box-shadow:0 12px 30px rgba(0,0,0,.16);
+    margin-bottom:20px;
 }
 
-/* ================= START ================= */
+/* ---------------- START ---------------- */
 
 .start-title{
     text-align:center;
-    color:#28713b;
-    font-size:28px;
-    margin-bottom:25px;
+    color:#176b3a;
+    font-size:27px;
 }
 
-.form-group{
-    margin-bottom:22px;
+.input-box{
+    margin:20px 0;
 }
 
-.form-group label{
+.input-box label{
     display:block;
     font-size:18px;
-    font-weight:500;
-    color:#355f3b;
     margin-bottom:8px;
+    font-weight:500;
 }
 
-input[type="text"]{
+.input-box input{
     width:100%;
-    padding:15px 18px;
-    border:2px solid #b8dcb0;
-    border-radius:15px;
-    font-family:'Kanit',sans-serif;
-    font-size:17px;
+    padding:14px;
+    border-radius:14px;
+    border:2px solid #b9d8c0;
+    font-family:'Kanit';
+    font-size:18px;
     outline:none;
-    background:#fafff8;
 }
 
-input[type="text"]:focus{
-    border-color:#5caa54;
-    box-shadow:0 0 0 4px rgba(92,170,84,.15);
+.input-box input:focus{
+    border-color:#42a85f;
+    box-shadow:0 0 8px rgba(66,168,95,.25);
 }
 
-/* ================= CLASS ================= */
-
-.class-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-}
-
-.class-btn{
-    border:none;
-    border-radius:20px;
-    padding:20px 10px;
-    cursor:pointer;
-    font-family:'Kanit',sans-serif;
-    color:white;
-    font-size:20px;
-    font-weight:600;
-    transition:.25s;
-    box-shadow:
-        0 8px 15px rgba(0,0,0,.18),
-        inset 0 2px 0 rgba(255,255,255,.35);
-}
-
-.class-btn:nth-child(1){
-    background:linear-gradient(145deg,#67b85c,#3c8d39);
-}
-
-.class-btn:nth-child(2){
-    background:linear-gradient(145deg,#4ca6d8,#287ab0);
-}
-
-.class-btn:nth-child(3){
-    background:linear-gradient(145deg,#b783dc,#7545a4);
-}
-
-.class-btn.selected{
-    transform:scale(1.05);
-    box-shadow:
-        0 0 0 5px rgba(255,255,255,.9),
-        0 10px 25px rgba(0,0,0,.3);
-}
-
-.difficulty{
-    display:block;
-    font-size:14px;
-    font-weight:400;
-    margin-top:5px;
-}
-
-/* ================= BUTTONS ================= */
-
-.start-btn,
-.restart-btn,
-.print-btn,
-.submit-btn{
-    width:100%;
-    border:none;
-    padding:16px;
-    margin-top:18px;
-    border-radius:18px;
-    color:white;
-    font-family:'Kanit',sans-serif;
+.grade-title{
+    text-align:center;
     font-size:19px;
+    margin-top:25px;
+}
+
+.grade-buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin:15px 0 25px;
+}
+
+.grade-btn{
+    border:none;
+    padding:14px 28px;
+    border-radius:18px;
+    background:#e6f5e8;
+    color:#267441;
+    font-family:'Kanit';
+    font-size:18px;
     font-weight:600;
     cursor:pointer;
-    transition:.25s;
+    transition:.2s;
+    box-shadow:0 5px 12px rgba(0,0,0,.12);
 }
 
-.start-btn,
-.restart-btn{
-    background:linear-gradient(145deg,#4fa94d,#267b31);
-}
-
-.print-btn{
-    background:linear-gradient(145deg,#397fbc,#235d8e);
-}
-
-.submit-btn{
-    background:linear-gradient(145deg,#e39b27,#bd6c0c);
-}
-
-.start-btn:hover,
-.restart-btn:hover,
-.print-btn:hover,
-.submit-btn:hover{
+.grade-btn:hover{
     transform:translateY(-3px);
 }
 
-/* ================= QUIZ ================= */
+.grade-btn.active{
+    background:linear-gradient(135deg,#258b49,#57bd6b);
+    color:white;
+}
+
+.start-btn{
+    display:block;
+    width:100%;
+    border:none;
+    padding:17px;
+    border-radius:18px;
+    background:linear-gradient(135deg,#167b3c,#48b85d);
+    color:white;
+    font-family:'Kanit';
+    font-size:21px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 7px 18px rgba(22,123,60,.35);
+    transition:.2s;
+}
+
+.start-btn:hover{
+    transform:translateY(-2px);
+}
+
+/* ---------------- QUIZ HEADER ---------------- */
 
 .quiz-top{
     display:flex;
     justify-content:space-between;
     align-items:center;
     gap:15px;
-    margin-bottom:18px;
+    flex-wrap:wrap;
+    margin-bottom:15px;
 }
 
 .question-number{
-    background:#e6f6e2;
-    color:#36773a;
-    padding:8px 16px;
-    border-radius:50px;
+    font-size:22px;
+    color:#176b3a;
     font-weight:600;
 }
 
-.score{
-    background:#fff3cd;
-    color:#856404;
-    padding:8px 16px;
-    border-radius:50px;
-    font-weight:600;
+.score-display{
+    background:#e8f7eb;
+    color:#267441;
+    padding:8px 15px;
+    border-radius:15px;
+    font-weight:500;
 }
 
 .progress-container{
+    width:100%;
     height:14px;
-    background:#e5f0e2;
-    border-radius:50px;
+    background:#e4eee5;
+    border-radius:20px;
     overflow:hidden;
     margin-bottom:25px;
 }
@@ -307,405 +265,365 @@ input[type="text"]:focus{
 .progress-bar{
     height:100%;
     width:0%;
-    background:linear-gradient(90deg,#54a84e,#2d7d35);
-    border-radius:50px;
+    background:linear-gradient(90deg,#35a852,#8bd35c);
+    border-radius:20px;
     transition:.4s;
 }
 
+/* ---------------- QUESTION ---------------- */
+
 .question-box{
-    background:linear-gradient(145deg,#f7fff5,#e9f7e6);
-    padding:25px;
-    border-radius:22px;
-    border-left:7px solid #4e9b4a;
-    margin-bottom:22px;
+    background:#f7fcf7;
+    border-radius:20px;
+    padding:22px;
+    border-left:7px solid #49a85c;
+    margin-bottom:20px;
 }
 
-.question-box h3{
-    font-size:22px;
-    line-height:1.6;
-    color:#285c30;
+.question-text{
+    font-size:23px;
+    line-height:1.55;
+    font-weight:500;
 }
 
-.difficulty-badge{
+.difficulty{
     display:inline-block;
-    margin-top:12px;
-    background:#d9efce;
-    color:#39703b;
-    border-radius:50px;
-    padding:5px 13px;
+    margin-top:10px;
+    padding:5px 12px;
+    border-radius:20px;
+    background:#fff0bd;
+    color:#856600;
     font-size:14px;
 }
 
-/* ================= OPTIONS ================= */
+/* ---------------- OPTIONS ---------------- */
 
 .options{
     display:grid;
-    gap:13px;
+    gap:14px;
 }
 
 .option{
     width:100%;
-    border:2px solid #cce3c7;
+    text-align:left;
+    border:2px solid #d8e8db;
     background:white;
     border-radius:17px;
     padding:15px 18px;
-    text-align:left;
-    font-family:'Kanit',sans-serif;
-    font-size:17px;
-    color:#315b36;
-    cursor:pointer;
-    transition:.25s;
-}
-
-.option:hover{
-    transform:translateX(5px);
-    border-color:#6eaf67;
-    background:#f4fff1;
-}
-
-.option.selected{
-    border-color:#36863a;
-    background:#dff2db;
-    box-shadow:0 5px 12px rgba(50,120,50,.15);
-}
-
-/* ================= NAVIGATION ================= */
-
-.navigation{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:12px;
-    margin-top:22px;
-}
-
-.nav-btn{
-    border:none;
-    border-radius:16px;
-    padding:14px;
-    font-family:'Kanit',sans-serif;
+    font-family:'Kanit';
     font-size:18px;
-    font-weight:600;
     cursor:pointer;
     transition:.2s;
 }
 
+.option:hover{
+    background:#f1faf2;
+    border-color:#6db978;
+    transform:translateX(3px);
+}
+
+.option.selected{
+    background:#dff5e3;
+    border-color:#29944a;
+    box-shadow:0 4px 12px rgba(41,148,74,.2);
+}
+
+/* ---------------- NAV ---------------- */
+
+.navigation{
+    display:flex;
+    justify-content:space-between;
+    gap:15px;
+    margin-top:25px;
+}
+
+.nav-btn{
+    border:none;
+    padding:13px 25px;
+    border-radius:15px;
+    font-family:'Kanit';
+    font-size:17px;
+    cursor:pointer;
+}
+
 .prev-btn{
-    background:#e5edf2;
-    color:#31566b;
+    background:#e8eeee;
+    color:#405050;
 }
 
 .next-btn{
-    background:linear-gradient(145deg,#397fbc,#235d8e);
+    background:#287e42;
     color:white;
-}
-
-.nav-btn:hover{
-    transform:translateY(-2px);
 }
 
 .nav-btn:disabled{
     opacity:.45;
     cursor:not-allowed;
-    transform:none;
 }
 
-/* ================= QUESTION MAP ================= */
+/* ---------------- QUESTION MAP ---------------- */
+
+.map-title{
+    margin-top:30px;
+    margin-bottom:12px;
+    color:#287442;
+    font-size:18px;
+}
 
 .question-map{
-    margin-top:20px;
-    padding:15px;
-    background:#f4faf1;
-    border-radius:18px;
-}
-
-.question-map-title{
-    color:#3a6e40;
-    font-weight:600;
-    margin-bottom:10px;
-}
-
-.map-buttons{
     display:flex;
     flex-wrap:wrap;
-    gap:7px;
+    gap:8px;
 }
 
 .map-btn{
-    width:38px;
-    height:38px;
-    border:none;
-    border-radius:10px;
-    background:#dfe9dc;
-    color:#47614b;
-    font-family:'Kanit',sans-serif;
+    width:40px;
+    height:40px;
+    border-radius:12px;
+    border:2px solid #d5e6d7;
+    background:white;
+    color:#46704f;
+    font-family:'Kanit';
     cursor:pointer;
-    font-weight:600;
+    font-weight:500;
 }
 
 .map-btn.answered{
-    background:#a9dca3;
-    color:#1e6524;
+    background:#cfeeda;
+    border-color:#51a868;
 }
 
 .map-btn.current{
-    background:#367fba;
+    background:#287e42;
     color:white;
+    border-color:#287e42;
 }
 
-.map-btn:hover{
-    transform:scale(1.08);
+/* ---------------- SUBMIT ---------------- */
+
+.submit-btn{
+    width:100%;
+    margin-top:22px;
+    padding:15px;
+    border:none;
+    border-radius:17px;
+    background:linear-gradient(135deg,#e28b20,#f0ad3e);
+    color:white;
+    font-family:'Kanit';
+    font-size:19px;
+    font-weight:600;
+    cursor:pointer;
 }
 
-/* ================= RESULT ================= */
+/* ---------------- RESULT ---------------- */
 
-.result{
+.result-card{
     text-align:center;
 }
 
 .result-icon{
-    font-size:80px;
+    font-size:70px;
 }
 
-.result h2{
-    color:#28713b;
-    font-size:32px;
-    margin:10px 0;
+.result-title{
+    font-size:30px;
+    color:#19733b;
 }
 
 .result-name{
-    font-size:20px;
-    color:#48674c;
-    margin-bottom:15px;
+    font-size:21px;
+    color:#555;
 }
 
 .result-score{
-    font-size:60px;
+    font-size:65px;
     font-weight:700;
-    color:#38863c;
+    color:#218345;
+    margin:10px 0;
 }
 
-.result-details{
+.result-score span{
+    font-size:28px;
+}
+
+.stats{
     display:grid;
     grid-template-columns:repeat(4,1fr);
     gap:12px;
     margin:25px 0;
 }
 
-.result-box{
-    background:#f0f8ed;
+.stat{
+    background:#f2faf3;
     border-radius:18px;
-    padding:15px 8px;
+    padding:15px 5px;
 }
 
-.result-box strong{
-    display:block;
-    font-size:25px;
-    color:#34763b;
+.stat-number{
+    font-size:27px;
+    font-weight:600;
+    color:#287a40;
 }
 
-.result-box span{
-    color:#5e755f;
+.stat-label{
+    font-size:14px;
+    color:#666;
 }
 
-.message{
-    padding:18px;
+.result-message{
+    padding:15px;
+    border-radius:15px;
     background:#fff8dc;
-    border-radius:18px;
-    color:#695a22;
-    margin-bottom:20px;
-    font-size:18px;
+    margin-bottom:25px;
 }
 
-/* ================= REVIEW ================= */
+.answer-review{
+    text-align:left;
+    margin-top:25px;
+}
 
 .review-title{
-    margin-top:35px;
-    margin-bottom:15px;
-    text-align:left;
-    color:#28713b;
-    font-size:25px;
-    border-bottom:3px solid #d8ebd2;
-    padding-bottom:10px;
+    text-align:center;
+    color:#21723b;
+    font-size:24px;
+    margin-bottom:18px;
 }
 
 .review-item{
-    text-align:left;
-    border-radius:18px;
-    padding:18px;
-    margin-bottom:15px;
+    border-radius:17px;
+    padding:17px;
+    margin-bottom:14px;
     border:2px solid #ddd;
-    background:#fff;
 }
 
-.review-item.correct-review{
-    background:#f0fff0;
-    border-color:#72c472;
+.review-item.correct{
+    background:#effbf1;
+    border-color:#8bd199;
 }
 
-.review-item.wrong-review{
-    background:#fff2f2;
-    border-color:#e58a8a;
+.review-item.wrong{
+    background:#fff3f3;
+    border-color:#e8a0a0;
 }
 
 .review-question{
     font-weight:600;
-    color:#294e30;
+    font-size:17px;
     margin-bottom:10px;
-    line-height:1.6;
 }
 
-.review-answer{
-    padding:8px 12px;
-    border-radius:10px;
-    margin-top:7px;
-    font-size:15px;
+.answer-line{
+    margin:5px 0;
 }
 
-.my-answer{
-    background:#eef5ff;
-    color:#245b91;
+.correct-text{
+    color:#168039;
+    font-weight:600;
 }
 
-.correct-answer{
-    background:#e3f6e4;
-    color:#267232;
+.wrong-text{
+    color:#c0392b;
+    font-weight:600;
 }
 
-.status{
-    display:inline-block;
-    padding:4px 12px;
-    border-radius:50px;
-    font-size:14px;
-    margin-bottom:8px;
+.result-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:25px;
 }
 
-.status.correct{
-    background:#c8eacb;
-    color:#176421;
+.result-buttons button{
+    flex:1;
+    padding:14px;
+    border:none;
+    border-radius:15px;
+    font-family:'Kanit';
+    font-size:17px;
+    cursor:pointer;
 }
 
-.status.wrong{
-    background:#f4caca;
-    color:#8a2020;
+.print-btn{
+    background:#3478c7;
+    color:white;
 }
 
-/* ================= FOOTER ================= */
+.restart-btn{
+    background:#288446;
+    color:white;
+}
+
+/* ---------------- FOOTER ---------------- */
 
 .footer{
     text-align:center;
-    margin-top:18px;
     color:white;
-    text-shadow:1px 2px 3px rgba(0,0,0,.4);
+    padding:20px 10px;
     font-size:15px;
-    line-height:1.7;
 }
 
-.hidden{
-    display:none !important;
-}
-
-/* ================= PRINT ================= */
-
-@media print{
-
-    body{
-        background:white !important;
-    }
-
-    body::before,
-    body::after,
-    .leaf,
-    .header,
-    .restart-btn,
-    .print-btn,
-    .footer{
-        display:none !important;
-    }
-
-    .container{
-        width:100%;
-        max-width:none;
-        margin:0;
-    }
-
-    .card{
-        box-shadow:none;
-        border:none;
-        padding:0;
-    }
-
-    #resultScreen{
-        display:block !important;
-    }
-
-    .review-item{
-        break-inside:avoid;
-    }
-}
-
-/* ================= MOBILE ================= */
+/* ---------------- RESPONSIVE ---------------- */
 
 @media(max-width:650px){
 
-    .container{
-        width:94%;
-        margin:15px auto;
-    }
-
-    .header{
-        padding:22px 15px;
-        border-radius:22px;
-    }
-
-    .header-icon{
-        font-size:50px;
-    }
-
     .header h1{
-        font-size:24px;
+        font-size:25px;
     }
 
     .header h2{
-        font-size:19px;
-    }
-
-    .header p{
-        font-size:14px;
+        font-size:18px;
     }
 
     .card{
         padding:20px 15px;
-        border-radius:22px;
     }
 
-    .class-grid{
-        grid-template-columns:1fr;
-    }
-
-    .question-box h3{
-        font-size:19px;
+    .question-text{
+        font-size:20px;
     }
 
     .option{
         font-size:16px;
     }
 
-    .result-score{
-        font-size:48px;
-    }
-
-    .result-details{
+    .stats{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .quiz-top{
-        flex-direction:column;
-        align-items:stretch;
-        text-align:center;
+    .result-score{
+        font-size:52px;
     }
 
-    .navigation{
-        grid-template-columns:1fr;
+    .result-buttons{
+        flex-direction:column;
+    }
+}
+
+/* ---------------- PRINT ---------------- */
+
+@media print{
+
+    body{
+        background:white;
+    }
+
+    body::before,
+    body::after,
+    .cloud{
+        display:none;
+    }
+
+    .header{
+        box-shadow:none;
+        border:1px solid #ddd;
+    }
+
+    .result-buttons,
+    .footer{
+        display:none;
+    }
+
+    .card{
+        box-shadow:none;
     }
 }
 </style>
@@ -713,340 +631,278 @@ input[type="text"]:focus{
 
 <body>
 
-<div class="leaf leaf1">🍃</div>
-<div class="leaf leaf2">🌿</div>
-<div class="leaf leaf3">🍂</div>
-<div class="leaf leaf4">🍃</div>
+<div class="cloud cloud1"></div>
+<div class="cloud cloud2"></div>
+<div class="cloud cloud3"></div>
 
 <div class="container">
 
-<!-- ================= HEADER ================= -->
-
-<div class="header">
-
-    <div class="header-icon">🌳</div>
-
-    <h1>วิชาวิทยาการคำนวณ</h1>
-
-    <h2>ภาคเรียนที่ 1 ปี 2569</h2>
-
-    <p>
-        ชั้นประถมศึกษาปีที่ 4 - 6
-        <br>
-        🌿 ระบบปรับระดับความยากตามชั้นเรียน 🌿
-    </p>
-
-</div>
-
-
-<!-- ================= START ================= -->
-
-<div id="startScreen" class="card">
-
-    <div class="start-title">
-        🌱 เริ่มทำแบบทดสอบ 🌱
-    </div>
-
-    <div class="form-group">
-
-        <label>👤 ชื่อและนามสกุล</label>
-
-        <input
-            type="text"
-            id="studentName"
-            placeholder="กรุณากรอกชื่อและนามสกุล"
-        >
-
+    <!-- HEADER -->
+    <div class="header">
+        <div class="icon">🌳</div>
+        <h1>วิชาวิทยาการคำนวณ</h1>
+        <h2>ภาคเรียนที่ 1 ปี 2569</h2>
+        <p>ชั้นประถมศึกษาปีที่ 4 - 6</p>
+        <p>🌿 ระบบปรับระดับความยาก <strong>40%</strong> ทุกระดับชั้น 🌿</p>
     </div>
 
 
-    <div class="form-group">
+    <!-- START SCREEN -->
+    <div id="startScreen" class="card">
 
-        <label>🎓 เลือกระดับชั้น</label>
+        <h2 class="start-title">
+            🌿 แบบทดสอบวิชาวิทยาการคำนวณ 🌿
+        </h2>
 
-        <div class="class-grid">
+        <div class="input-box">
+            <label>👤 ชื่อ - นามสกุล</label>
+            <input
+                type="text"
+                id="studentName"
+                placeholder="กรอกชื่อและนามสกุล"
+            >
+        </div>
+
+        <div class="grade-title">
+            📚 เลือกระดับชั้น
+        </div>
+
+        <div class="grade-buttons">
 
             <button
-                class="class-btn"
-                onclick="selectClass(this,'ป.4')"
-            >
+                class="grade-btn"
+                onclick="selectClass(this,'ป.4')">
                 ป.4
-                <span class="difficulty">
-                    ความยาก 30%
-                </span>
             </button>
 
             <button
-                class="class-btn selected"
-                onclick="selectClass(this,'ป.5')"
-            >
+                class="grade-btn active"
+                onclick="selectClass(this,'ป.5')">
                 ป.5
-                <span class="difficulty">
-                    ความยาก 50%
-                </span>
             </button>
 
             <button
-                class="class-btn"
-                onclick="selectClass(this,'ป.6')"
-            >
+                class="grade-btn"
+                onclick="selectClass(this,'ป.6')">
                 ป.6
-                <span class="difficulty">
-                    ความยาก 70%
-                </span>
             </button>
 
         </div>
 
-    </div>
-
-
-    <button
-        class="start-btn"
-        onclick="startQuiz()"
-    >
-        🌿 เริ่มทำแบบทดสอบ
-    </button>
-
-</div>
-
-
-<!-- ================= QUIZ ================= -->
-
-<div id="quizScreen" class="card hidden">
-
-    <div class="quiz-top">
-
-        <div
-            class="question-number"
-            id="questionNumber"
-        >
-            ข้อ 1 / 20
-        </div>
-
-        <div
-            class="score"
-            id="scoreDisplay"
-        >
-            ตอบแล้ว 0 / 20
-        </div>
-
-    </div>
-
-
-    <div class="progress-container">
-
-        <div
-            class="progress-bar"
-            id="progressBar"
-        ></div>
-
-    </div>
-
-
-    <div class="question-box">
-
-        <h3 id="questionText">
-            คำถาม
-        </h3>
-
-        <span
-            class="difficulty-badge"
-            id="difficultyBadge"
-        >
-            ความยาก 50%
-        </span>
-
-    </div>
-
-
-    <div
-        class="options"
-        id="options"
-    ></div>
-
-
-    <!-- NAVIGATION -->
-
-    <div class="navigation">
-
-        <button
-            class="nav-btn prev-btn"
-            id="prevBtn"
-            onclick="previousQuestion()"
-        >
-            ← ข้อก่อนหน้า
-        </button>
-
-        <button
-            class="nav-btn next-btn"
-            id="nextBtn"
-            onclick="nextQuestion()"
-        >
-            ข้อต่อไป →
-        </button>
-
-    </div>
-
-
-    <!-- QUESTION MAP -->
-
-    <div class="question-map">
-
-        <div class="question-map-title">
-            📋 รายการข้อสอบ
+        <div style="
+            text-align:center;
+            background:#f1f9f2;
+            padding:12px;
+            border-radius:15px;
+            margin-bottom:20px;
+            color:#397048;
+        ">
+            ระดับความยาก: <strong>40%</strong>
             <br>
-            <small>
-                สามารถย้อนกลับไปแก้คำตอบได้
-            </small>
+            จำนวนข้อ: <strong>20 ข้อ</strong>
+            <br>
+            คะแนนเต็ม: <strong>20 คะแนน</strong>
         </div>
 
-        <div
-            class="map-buttons"
-            id="mapButtons"
-        ></div>
+        <button class="start-btn" onclick="startQuiz()">
+            🚀 เริ่มทำแบบทดสอบ
+        </button>
 
     </div>
 
 
-    <button
-        class="submit-btn"
-        id="submitBtn"
-        onclick="submitQuiz()"
-    >
-        🏆 ส่งคำตอบและดูคะแนน
-    </button>
+    <!-- QUIZ SCREEN -->
+    <div id="quizScreen" class="card" style="display:none;">
 
-</div>
+        <div class="quiz-top">
+
+            <div class="question-number" id="questionNumber">
+                ข้อ 1 / 20
+            </div>
+
+            <div class="score-display" id="scoreDisplay">
+                ตอบแล้ว 0 / 20
+            </div>
+
+        </div>
+
+        <div class="progress-container">
+            <div
+                class="progress-bar"
+                id="progressBar">
+            </div>
+        </div>
+
+        <div class="question-box">
+
+            <div
+                class="question-text"
+                id="questionText">
+            </div>
+
+            <div
+                class="difficulty"
+                id="difficultyBadge">
+                ระดับความยาก 40%
+            </div>
+
+        </div>
+
+        <div
+            class="options"
+            id="options">
+        </div>
 
 
-<!-- ================= RESULT ================= -->
+        <div class="navigation">
 
-<div id="resultScreen" class="card hidden">
+            <button
+                class="nav-btn prev-btn"
+                id="prevBtn"
+                onclick="previousQuestion()">
+                ← ข้อก่อนหน้า
+            </button>
 
-    <div class="result">
+            <button
+                class="nav-btn next-btn"
+                id="nextBtn"
+                onclick="nextQuestion()">
+                ข้อถัดไป →
+            </button>
+
+        </div>
+
+
+        <div class="map-title">
+            📝 เลือกข้อที่ต้องการทำหรือกลับไปแก้ไข
+        </div>
+
+        <div
+            class="question-map"
+            id="mapButtons">
+        </div>
+
+
+        <button
+            class="submit-btn"
+            id="submitBtn"
+            onclick="checkBeforeSubmit()">
+            📤 ส่งคำตอบและตรวจคะแนน
+        </button>
+
+    </div>
+
+
+    <!-- RESULT SCREEN -->
+    <div
+        id="resultScreen"
+        class="card result-card"
+        style="display:none;">
 
         <div class="result-icon">
             🏆
         </div>
 
-        <h2>
-            สรุปผลการทดสอบ
+        <h2 class="result-title">
+            ผลการทดสอบ
         </h2>
 
         <div
             class="result-name"
-            id="resultName"
-        ></div>
+            id="resultName">
+        </div>
 
-        <div
-            class="result-score"
-            id="resultScore"
-        >
-            0 / 20
+        <div class="result-score">
+            <span id="resultScore">0</span>
+            <span>/ 20 คะแนน</span>
         </div>
 
 
-        <div class="result-details">
+        <div class="stats">
 
-            <div class="result-box">
-
-                <strong id="correctCount">
+            <div class="stat">
+                <div
+                    class="stat-number"
+                    id="correctCount">
                     0
-                </strong>
-
-                <span>
+                </div>
+                <div class="stat-label">
                     ตอบถูก
-                </span>
-
+                </div>
             </div>
 
-
-            <div class="result-box">
-
-                <strong id="wrongCount">
+            <div class="stat">
+                <div
+                    class="stat-number"
+                    id="wrongCount">
                     0
-                </strong>
-
-                <span>
+                </div>
+                <div class="stat-label">
                     ตอบผิด
-                </span>
-
+                </div>
             </div>
 
-
-            <div class="result-box">
-
-                <strong id="percentage">
+            <div class="stat">
+                <div
+                    class="stat-number"
+                    id="percentage">
                     0%
-                </strong>
-
-                <span>
+                </div>
+                <div class="stat-label">
                     ร้อยละ
-                </span>
-
+                </div>
             </div>
 
-
-            <div class="result-box">
-
-                <strong id="gradeLevel">
+            <div class="stat">
+                <div
+                    class="stat-number"
+                    id="gradeLevel">
                     -
-                </strong>
-
-                <span>
-                    ระดับผล
-                </span>
-
+                </div>
+                <div class="stat-label">
+                    ระดับผลการทดสอบ
+                </div>
             </div>
 
         </div>
 
 
         <div
-            class="message"
-            id="resultMessage"
-        ></div>
+            class="result-message"
+            id="resultMessage">
+        </div>
+
+
+        <div
+            class="answer-review"
+            id="answerReview">
+        </div>
+
+
+        <div class="result-buttons">
+
+            <button
+                class="print-btn"
+                onclick="window.print()">
+                🖨️ พิมพ์ / บันทึก PDF
+            </button>
+
+            <button
+                class="restart-btn"
+                onclick="restartQuiz()">
+                🔄 ทำแบบทดสอบใหม่
+            </button>
+
+        </div>
 
     </div>
 
 
-    <!-- ANSWER REVIEW -->
-
-    <div class="review-title">
-        📋 เฉลยและตรวจคำตอบรายข้อ
+    <div class="footer">
+        🌿 วิชาวิทยาการคำนวณ ภาคเรียนที่ 1 ปี 2569 🌿
+        <br>
+        ผู้พัฒนา: ครูปรเมศวร์ ฟองลม
     </div>
-
-    <div id="answerReview"></div>
-
-
-    <button
-        class="print-btn"
-        onclick="window.print()"
-    >
-        🖨️ พิมพ์ผลการทดสอบ / บันทึกเป็น PDF
-    </button>
-
-
-    <button
-        class="restart-btn"
-        onclick="restartQuiz()"
-    >
-        🔄 ทำแบบทดสอบใหม่
-    </button>
-
-</div>
-
-
-<div class="footer">
-
-    🌿 วิชาวิทยาการคำนวณ ภาคเรียนที่ 1 ปี 2569 🌿
-    <br>
-
-    ผู้พัฒนา:
-    <strong>ครูปรเมศวร์ ฟองลม</strong>
-
-</div>
 
 </div>
 
@@ -1055,617 +911,688 @@ input[type="text"]:focus{
 
 /* =========================================================
    QUESTION BANK
+   ทุกระดับชั้นใช้ระดับความยาก 40%
 ========================================================= */
 
+
+/* ===================== ป.4 ===================== */
+
 const questionsP4 = [
+
 {
-q:"ข้อใดอธิบายคำว่า “อัลกอริทึม” ได้ถูกต้องที่สุด",
-options:[
-"เกมคอมพิวเตอร์",
-"ขั้นตอนการทำงานที่เรียงลำดับอย่างชัดเจน",
-"เครื่องคอมพิวเตอร์",
-"ข้อมูลส่วนตัว"
-],
-answer:1
+    q:"ข้อใดอธิบายความหมายของอัลกอริทึมได้ถูกต้องที่สุด?",
+    options:[
+        "โปรแกรมที่ใช้เล่นเกมเท่านั้น",
+        "ขั้นตอนการแก้ปัญหาที่เรียงลำดับอย่างชัดเจน",
+        "เครื่องคอมพิวเตอร์ชนิดหนึ่ง",
+        "ข้อมูลที่อยู่ในอินเทอร์เน็ต"
+    ],
+    answer:1
 },
+
 {
-q:"ถ้าต้องการให้หุ่นยนต์เดินไปข้างหน้า 3 ก้าว แล้วหยุด ควรทำอย่างไร",
-options:[
-"หยุดก่อนแล้วจึงเดิน",
-"เดิน 3 ก้าว แล้วหยุด",
-"เดิน 1 ก้าวแล้วเลี้ยว",
-"เดินแบบสุ่ม"
-],
-answer:1
+    q:"ถ้าต้องการให้หุ่นยนต์เดินไปข้างหน้า 3 ก้าวแล้วหยุด ควรใช้แนวคิดใด?",
+    options:[
+        "สุ่มคำสั่ง",
+        "กำหนดลำดับขั้นตอน",
+        "ลบข้อมูลทั้งหมด",
+        "ปิดเครื่องคอมพิวเตอร์"
+    ],
+    answer:1
 },
+
 {
-q:"ข้อใดเป็นตัวอย่างของข้อมูล",
-options:[
-"ชื่อ อายุ และคะแนน",
-"โต๊ะเรียน",
-"เก้าอี้",
-"ห้องเรียน"
-],
-answer:0
+    q:"ข้อใดเป็นข้อมูลส่วนบุคคลของนักเรียน?",
+    options:[
+        "ชื่อและอายุ",
+        "ชื่อวิชาที่เรียน",
+        "จำนวนโต๊ะในห้อง",
+        "สีของกระดาน"
+    ],
+    answer:0
 },
+
 {
-q:"AI หรือปัญญาประดิษฐ์คืออะไร",
-options:[
-"เทคโนโลยีที่สามารถทำงานบางอย่างที่ต้องใช้ความสามารถคล้ายมนุษย์",
-"เครื่องพิมพ์",
-"สายชาร์จ",
-"โต๊ะคอมพิวเตอร์"
-],
-answer:0
+    q:"AI หรือปัญญาประดิษฐ์คืออะไร?",
+    options:[
+        "เทคโนโลยีที่สามารถทำงานบางอย่างที่ต้องใช้ความฉลาดของมนุษย์",
+        "เครื่องใช้ไฟฟ้าที่ไม่มีโปรแกรม",
+        "สายไฟชนิดหนึ่ง",
+        "อุปกรณ์สำหรับเล่นกีฬา"
+    ],
+    answer:0
 },
+
 {
-q:"ข้อใดเป็นตัวอย่างการใช้ AI ที่เหมาะสม",
-options:[
-"ให้ AI ช่วยค้นหาแนวคิดในการทำงาน",
-"ให้ AI ขโมยรหัสผ่าน",
-"ใช้ AI หลอกผู้อื่น",
-"ใช้ AI สร้างข่าวปลอม"
-],
-answer:0
+    q:"ข้อใดเป็นการใช้ AI อย่างเหมาะสมในการเรียน?",
+    options:[
+        "ใช้ช่วยอธิบายบทเรียนแล้วตรวจสอบข้อมูลด้วยตนเอง",
+        "ให้ AI ทำการบ้านทั้งหมดแล้วส่งเป็นของตนเอง",
+        "เชื่อทุกคำตอบของ AI โดยไม่ตรวจสอบ",
+        "ส่งข้อมูลส่วนตัวให้ AI ทุกอย่าง"
+    ],
+    answer:0
 },
+
 {
-q:"ถ้ามีคนแปลกหน้าทางอินเทอร์เน็ตถามที่อยู่บ้าน ควรทำอย่างไร",
-options:[
-"บอกทันที",
-"ส่งรูปบ้านให้",
-"ไม่บอกและแจ้งผู้ใหญ่ที่ไว้ใจ",
-"โพสต์ในกลุ่ม"
-],
-answer:2
+    q:"หากคนแปลกหน้าบนอินเทอร์เน็ตถามที่อยู่บ้าน นักเรียนควรทำอย่างไร?",
+    options:[
+        "บอกทันที",
+        "ส่งรูปบ้านให้ดู",
+        "ไม่เปิดเผยและบอกผู้ใหญ่ที่ไว้ใจ",
+        "ถามกลับว่าเขาอยู่ที่ไหน"
+    ],
+    answer:2
 },
+
 {
-q:"ข้อใดเป็นข้อมูลส่วนตัวที่ไม่ควรเปิดเผยต่อคนแปลกหน้า",
-options:[
-"สีที่ชอบ",
-"รหัสผ่าน",
-"วิชาที่ชอบ",
-"หนังสือที่ชอบ"
-],
-answer:1
+    q:"ข้อใดไม่ควรเปิดเผยให้คนอื่นบนอินเทอร์เน็ต?",
+    options:[
+        "สีที่ชอบ",
+        "รหัสผ่าน",
+        "วิชาที่ชอบ",
+        "สัตว์ที่ชอบ"
+    ],
+    answer:1
 },
+
 {
-q:"รหัสผ่านข้อใดปลอดภัยกว่า",
-options:[
-"123456",
-"password",
-"ABC123",
-"T9#kP7!m"
-],
-answer:3
+    q:"ข้อใดเป็นรหัสผ่านที่คาดเดาได้ยากกว่า?",
+    options:[
+        "123456",
+        "password",
+        "student123",
+        "T9#kP7!m"
+    ],
+    answer:3
 },
+
 {
-q:"เมื่อได้รับข้อความว่า “คุณถูกรางวัล! กดลิงก์ทันที” ควรทำอย่างไร",
-options:[
-"กดทันที",
-"ส่งต่อให้เพื่อน",
-"ตรวจสอบก่อนและไม่กดลิงก์ที่น่าสงสัย",
-"กรอกข้อมูลส่วนตัว"
-],
-answer:2
+    q:"มีข้อความว่า 'คุณได้รับรางวัล คลิกลิงก์เพื่อรับเงินทันที' ควรทำอย่างไร?",
+    options:[
+        "คลิกทันที",
+        "ส่งต่อให้เพื่อน",
+        "ตรวจสอบแหล่งที่มาและไม่คลิกลิงก์ที่น่าสงสัย",
+        "กรอกข้อมูลส่วนตัว"
+    ],
+    answer:2
 },
+
 {
-q:"ข้อใดเป็นการใช้อินเทอร์เน็ตอย่างปลอดภัย",
-options:[
-"ใช้รหัสผ่านร่วมกับเพื่อน",
-"เปิดเผยที่อยู่",
-"ไม่เปิดเผยข้อมูลสำคัญ",
-"รับเพื่อนทุกคน"
-],
-answer:2
+    q:"ข้อใดเป็นพฤติกรรมที่ปลอดภัยในการใช้อินเทอร์เน็ต?",
+    options:[
+        "ใช้รหัสผ่านเดียวกับทุกเว็บไซต์",
+        "บอก OTP ให้เพื่อน",
+        "ตรวจสอบเว็บไซต์ก่อนกรอกข้อมูล",
+        "ดาวน์โหลดไฟล์ทุกไฟล์ที่ได้รับ"
+    ],
+    answer:2
 },
+
 {
-q:"ถ้าต้องการค้นหาข้อมูลบนอินเทอร์เน็ตควรใช้สิ่งใด",
-options:[
-"เครื่องมือค้นหา",
-"ลำโพง",
-"เครื่องพิมพ์",
-"ไมโครโฟน"
-],
-answer:0
+    q:"หากต้องการค้นหาข้อมูลเกี่ยวกับดาวเคราะห์ ควรใช้สิ่งใด?",
+    options:[
+        "เครื่องมือค้นหา",
+        "เครื่องคิดเลข",
+        "กล้องถ่ายรูป",
+        "ลำโพง"
+    ],
+    answer:0
 },
+
 {
-q:"ข้อใดเป็นการทำงานซ้ำ",
-options:[
-"เปิดเครื่องหนึ่งครั้ง",
-"เดินหน้า 5 ก้าวโดยทำคำสั่งเดิมซ้ำ",
-"ปิดเครื่อง",
-"พิมพ์ชื่อ"
-],
-answer:1
+    q:"คำสั่งที่ทำงานซ้ำหลายครั้งเรียกว่าอะไร?",
+    options:[
+        "เงื่อนไข",
+        "การทำซ้ำ",
+        "ข้อมูล",
+        "การปิดระบบ"
+    ],
+    answer:1
 },
+
 {
-q:"ถ้าฝนตกให้กางร่ม ถ้าไม่ตกไม่ต้องกางร่ม เป็นตัวอย่างของอะไร",
-options:[
-"การตัดสินใจตามเงื่อนไข",
-"การวาดภาพ",
-"การบันทึกไฟล์",
-"การพิมพ์ข้อความ"
-],
-answer:0
+    q:"ถ้าฝนตกให้กางร่ม เป็นตัวอย่างของแนวคิดใด?",
+    options:[
+        "เงื่อนไข",
+        "การสุ่ม",
+        "การจัดเก็บข้อมูล",
+        "การพิมพ์"
+    ],
+    answer:0
 },
+
 {
-q:"ข้อใดเป็นอุปกรณ์สำหรับป้อนข้อมูลเข้าสู่คอมพิวเตอร์",
-options:[
-"แป้นพิมพ์",
-"ลำโพง",
-"จอภาพ",
-"เครื่องฉายภาพ"
-],
-answer:0
+    q:"ข้อใดเป็นอุปกรณ์รับข้อมูลเข้าสู่คอมพิวเตอร์?",
+    options:[
+        "แป้นพิมพ์",
+        "ลำโพง",
+        "จอภาพ",
+        "เครื่องพิมพ์"
+    ],
+    answer:0
 },
+
 {
-q:"ถ้าต้องการให้ AI สร้างภาพตามคำบรรยาย เราควรทำสิ่งใด",
-options:[
-"พิมพ์คำสั่งหรือคำบรรยายที่ชัดเจน",
-"ปิดอินเทอร์เน็ต",
-"ถอดเมาส์",
-"ลบโปรแกรม"
-],
-answer:0
+    q:"หากต้องการให้ AI สร้างภาพตามความต้องการ ควรทำอย่างไร?",
+    options:[
+        "เขียนคำสั่งหรือคำอธิบายให้ชัดเจน",
+        "พิมพ์คำว่า 'ทำอะไรก็ได้'",
+        "ไม่ต้องบอกสิ่งที่ต้องการ",
+        "ส่งรหัสผ่านให้ AI"
+    ],
+    answer:0
 },
+
 {
-q:"หาก AI ให้ข้อมูลที่เราไม่แน่ใจ ควรทำอย่างไร",
-options:[
-"เชื่อทันที",
-"ตรวจสอบกับแหล่งข้อมูลที่น่าเชื่อถือ",
-"แชร์ทันที",
-"ลบอินเทอร์เน็ต"
-],
-answer:1
+    q:"หาก AI ให้ข้อมูลที่ไม่แน่ใจว่าสถูกต้อง ควรทำอย่างไร?",
+    options:[
+        "เชื่อทันที",
+        "ตรวจสอบกับแหล่งข้อมูลที่น่าเชื่อถือ",
+        "ส่งต่อทันที",
+        "ลบคอมพิวเตอร์"
+    ],
+    answer:1
 },
+
 {
-q:"ข้อใดเป็นพฤติกรรมที่เคารพผู้อื่นบนโลกออนไลน์",
-options:[
-"โพสต์ข้อความล้อเลียน",
-"ใช้คำสุภาพและไม่กลั่นแกล้งผู้อื่น",
-"เผยแพร่รูปเพื่อนโดยไม่ขออนุญาต",
-"ส่งข้อความรบกวน"
-],
-answer:1
+    q:"ข้อใดเป็นการสื่อสารออนไลน์อย่างสุภาพ?",
+    options:[
+        "ใช้คำหยาบ",
+        "ล้อเลียนเพื่อน",
+        "ใช้ถ้อยคำสุภาพและเคารพผู้อื่น",
+        "เผยแพร่เรื่องส่วนตัวของเพื่อน"
+    ],
+    answer:2
 },
+
 {
-q:"ถ้าเห็นภาพหรือคลิปที่ดูผิดปกติและอาจสร้างด้วย AI ควรทำอย่างไร",
-options:[
-"เชื่อทันที",
-"ตรวจสอบแหล่งที่มา",
-"แชร์ต่อ",
-"นำไปหลอกเพื่อน"
-],
-answer:1
+    q:"หากพบภาพหรือวิดีโอที่อาจสร้างด้วย AI ควรทำอย่างไร?",
+    options:[
+        "เชื่อทันที",
+        "ตรวจสอบแหล่งที่มา",
+        "ส่งต่อทันที",
+        "แก้ไขแล้วนำไปหลอกเพื่อน"
+    ],
+    answer:1
 },
+
 {
-q:"ข้อใดเป็นการใช้เทคโนโลยีอย่างรับผิดชอบ",
-options:[
-"ขโมยบัญชีผู้อื่น",
-"เผยแพร่ข้อมูลเท็จ",
-"ใช้เทคโนโลยีเพื่อเรียนรู้และเคารพสิทธิผู้อื่น",
-"แอบดูรหัสผ่าน"
-],
-answer:2
+    q:"ข้อใดแสดงถึงการใช้เทคโนโลยีอย่างรับผิดชอบ?",
+    options:[
+        "ขโมยรหัสผ่าน",
+        "เผยแพร่ข่าวปลอม",
+        "เคารพสิทธิและข้อมูลส่วนตัวของผู้อื่น",
+        "ใช้บัญชีของเพื่อนโดยไม่ได้รับอนุญาต"
+    ],
+    answer:2
 },
+
 {
-q:"ก่อนแชร์ข่าวในกลุ่มห้องเรียนควรทำสิ่งใดก่อน",
-options:[
-"แชร์ทันที",
-"ตรวจสอบว่าข้อมูลมาจากแหล่งที่น่าเชื่อถือ",
-"เพิ่มข้อความให้ตื่นเต้น",
-"ส่งต่อให้ทุกคน"
-],
-answer:1
+    q:"ก่อนแชร์ข่าวในสื่อสังคมออนไลน์ ควรทำสิ่งใดก่อน?",
+    options:[
+        "แชร์ทันที",
+        "ตรวจสอบความถูกต้องของข่าว",
+        "เพิ่มข้อความให้น่ากลัวขึ้น",
+        "ส่งให้คนอื่นก่อน"
+    ],
+    answer:1
 }
+
 ];
 
+
+/* ===================== ป.5 ===================== */
 
 const questionsP5 = [
+
 {
-q:"ข้อใดเป็นลักษณะสำคัญของอัลกอริทึมที่ดี",
-options:[
-"มีขั้นตอนชัดเจนและสามารถทำตามได้",
-"มีคำสั่งจำนวนมากที่สุด",
-"ใช้เฉพาะภาพ",
-"ไม่ต้องมีลำดับ"
-],
-answer:0
+    q:"อัลกอริทึมที่ดีควรมีลักษณะอย่างไร?",
+    options:[
+        "มีขั้นตอนชัดเจนและทำตามได้",
+        "มีคำสั่งมากที่สุด",
+        "เปลี่ยนขั้นตอนได้ตลอดเวลา",
+        "ไม่มีจุดสิ้นสุด"
+    ],
+    answer:0
 },
+
 {
-q:"การแบ่งปัญหาใหญ่ให้เป็นปัญหาย่อย ๆ เรียกว่าอะไร",
-options:[
-"การทำซ้ำ",
-"การแยกส่วนปัญหา",
-"การสุ่ม",
-"การตกแต่ง"
-],
-answer:1
+    q:"การแบ่งปัญหาใหญ่ให้เป็นปัญหาย่อย ๆ เรียกว่าอะไร?",
+    options:[
+        "การสุ่ม",
+        "การแยกย่อยปัญหา",
+        "การลบข้อมูล",
+        "การเข้ารหัส"
+    ],
+    answer:1
 },
+
 {
-q:"ถ้าต้องการให้โปรแกรมแสดงคำว่า “สวัสดี” 10 ครั้ง ควรใช้แนวคิดใด",
-options:[
-"การทำซ้ำ",
-"การสุ่ม",
-"การลบ",
-"การหยุด"
-],
-answer:0
+    q:"หากต้องการให้โปรแกรมแสดงคำว่า 'สวัสดี' 10 ครั้ง ควรใช้แนวคิดใด?",
+    options:[
+        "การทำซ้ำ",
+        "การสุ่ม",
+        "การลบ",
+        "การปิดโปรแกรม"
+    ],
+    answer:0
 },
+
 {
-q:"ข้อใดเป็นตัวอย่างของเงื่อนไขในโปรแกรม",
-options:[
-"เดินไปข้างหน้า",
-"ทำซ้ำ 5 ครั้ง",
-"ถ้าคะแนนมากกว่าหรือเท่ากับ 50 ให้แสดงคำว่า “ผ่าน”",
-"แสดงรูปภาพ"
-],
-answer:2
+    q:"ข้อใดเป็นตัวอย่างของการใช้เงื่อนไข?",
+    options:[
+        "แสดงข้อความ 10 ครั้ง",
+        "บวกเลข 2 จำนวน",
+        "ถ้าคะแนนถึง 50 ให้แสดงคำว่า 'ผ่าน'",
+        "เปิดเพลง"
+    ],
+    answer:2
 },
+
 {
-q:"หากโปรแกรมทำงานผิดพลาด ขั้นตอนใดเหมาะสมที่สุด",
-options:[
-"ลบโปรแกรมทันที",
-"ตรวจสอบข้อมูล คำสั่ง และผลลัพธ์",
-"เปลี่ยนเครื่อง",
-"ปิดอินเทอร์เน็ต"
-],
-answer:1
+    q:"การค้นหาและแก้ไขข้อผิดพลาดของโปรแกรมเรียกว่าอะไร?",
+    options:[
+        "Coding",
+        "Debugging",
+        "Downloading",
+        "Searching"
+    ],
+    answer:1
 },
+
 {
-q:"AI สามารถเรียนรู้รูปแบบจากข้อมูลจำนวนมากได้ด้วยแนวคิดใด",
-options:[
-"การเรียนรู้ของเครื่อง",
-"การพิมพ์เอกสาร",
-"การถ่ายภาพ",
-"การเปิดไฟล์"
-],
-answer:0
+    q:"Machine Learning เกี่ยวข้องกับอะไร?",
+    options:[
+        "ระบบที่เรียนรู้รูปแบบจากข้อมูล",
+        "เครื่องพิมพ์",
+        "สายชาร์จ",
+        "การวาดรูปด้วยมือ"
+    ],
+    answer:0
 },
+
 {
-q:"ข้อใดเป็นการใช้ Generative AI อย่างเหมาะสมในการเรียน",
-options:[
-"ให้ AI ช่วยอธิบายเรื่องที่ไม่เข้าใจแล้วนำมาศึกษาต่อ",
-"ให้ AI ทำงานทุกอย่างแล้วส่งโดยไม่ตรวจสอบ",
-"ใช้ AI สร้างข้อมูลเท็จ",
-"ใช้ AI ทำข้อสอบแทนทุกครั้ง"
-],
-answer:0
+    q:"ข้อใดเป็นการใช้ Generative AI อย่างเหมาะสม?",
+    options:[
+        "ใช้ช่วยระดมความคิดแล้วตรวจสอบและเรียบเรียงด้วยตนเอง",
+        "คัดลอกคำตอบทั้งหมดแล้วส่งเป็นผลงานตนเอง",
+        "ป้อนรหัสผ่านส่วนตัวให้ AI",
+        "เชื่อทุกคำตอบโดยไม่ตรวจสอบ"
+    ],
+    answer:0
 },
+
 {
-q:"หาก AI สร้างข้อมูลที่ดูน่าเชื่อถือ แต่เราไม่แน่ใจ ควรทำอย่างไร",
-options:[
-"เชื่อทันที",
-"ตรวจสอบกับแหล่งข้อมูลอื่น",
-"แชร์ทันที",
-"บอกว่า AI ถูกเสมอ"
-],
-answer:1
+    q:"หาก AI ให้ข้อมูลที่ดูน่าเชื่อถือแต่ไม่มีแหล่งอ้างอิง ควรทำอย่างไร?",
+    options:[
+        "เชื่อทันที",
+        "ตรวจสอบกับแหล่งข้อมูลอื่น",
+        "แชร์ทันที",
+        "นำไปทำข่าว"
+    ],
+    answer:1
 },
+
 {
-q:"ข้อใดเป็นตัวอย่างของ Fake News",
-options:[
-"ข่าวจากเว็บไซต์ของหน่วยงานที่ตรวจสอบได้",
-"ข่าวที่ไม่มีแหล่งที่มาและมีข้อความชวนให้ตื่นตระหนก",
-"ประกาศจากโรงเรียน",
-"ข้อมูลจากหนังสือเรียน"
-],
-answer:1
+    q:"ข่าวปลอม หรือ Fake News หมายถึงอะไร?",
+    options:[
+        "ข่าวที่มีรูปภาพ",
+        "ข้อมูลข่าวสารที่เป็นเท็จหรือทำให้เข้าใจผิด",
+        "ข่าวจากหนังสือพิมพ์",
+        "ข่าวเกี่ยวกับเทคโนโลยี"
+    ],
+    answer:1
 },
+
 {
-q:"Digital Footprint หมายถึงอะไร",
-options:[
-"รอยเท้าที่เกิดจากการเดิน",
-"ร่องรอยข้อมูลที่เราทิ้งไว้จากการใช้งานดิจิทัล",
-"โปรแกรมวาดภาพ",
-"อุปกรณ์คอมพิวเตอร์"
-],
-answer:1
+    q:"Digital Footprint หมายถึงอะไร?",
+    options:[
+        "รอยเท้าบนพื้น",
+        "ร่องรอยข้อมูลที่เกิดจากการใช้งานดิจิทัล",
+        "โปรแกรมวาดภาพ",
+        "รหัสผ่าน"
+    ],
+    answer:1
 },
+
 {
-q:"ถ้าเพื่อนส่งรหัสผ่านของตนเองมาให้ เราควรทำอย่างไร",
-options:[
-"นำไปลองเข้าสู่ระบบ",
-"ส่งต่อให้คนอื่น",
-"ไม่ใช้รหัสผ่านและไม่เผยแพร่",
-"โพสต์ลงกลุ่ม"
-],
-answer:2
+    q:"หากเพื่อนส่งรหัสผ่านของตนเองมาให้ นักเรียนควรทำอย่างไร?",
+    options:[
+        "นำไปทดลองเข้าสู่ระบบ",
+        "ส่งต่อให้คนอื่น",
+        "ไม่ใช้และไม่เผยแพร่รหัสผ่าน",
+        "โพสต์ลงกลุ่ม"
+    ],
+    answer:2
 },
+
 {
-q:"ข้อใดเป็นรหัสผ่านที่ปลอดภัยกว่า",
-options:[
-"12345678",
-"poramat",
-"01012560",
-"Q7#rL9!xP2"
-],
-answer:3
+    q:"ข้อใดเป็นรหัสผ่านที่มีความปลอดภัยมากกว่า?",
+    options:[
+        "12345678",
+        "qwerty",
+        "student2026",
+        "Q7#rL9!xP2"
+    ],
+    answer:3
 },
+
 {
-q:"การนำรูปภาพของผู้อื่นมาใช้โดยไม่ขออนุญาตเกี่ยวข้องกับเรื่องใด",
-options:[
-"ลิขสิทธิ์",
-"การคำนวณ",
-"การวนซ้ำ",
-"ฮาร์ดแวร์"
-],
-answer:0
+    q:"ลิขสิทธิ์เกี่ยวข้องกับเรื่องใด?",
+    options:[
+        "สิทธิของเจ้าของผลงาน",
+        "ความเร็วอินเทอร์เน็ต",
+        "ชนิดของคอมพิวเตอร์",
+        "จำนวนผู้ใช้งาน"
+    ],
+    answer:0
 },
+
 {
-q:"ถ้าต้องการค้นหาวิธีปลูกผักในกระถาง คำค้นใดเฉพาะเจาะจงที่สุด",
-options:[
-"ผัก",
-"ปลูก",
-"วิธีปลูกผักในกระถาง",
-"ต้นไม้"
-],
-answer:2
+    q:"ข้อใดเป็นคำค้นหาที่มีความเฉพาะเจาะจงมากกว่า?",
+    options:[
+        "AI",
+        "คอมพิวเตอร์",
+        "ประโยชน์ของ AI สำหรับนักเรียน ป.5",
+        "เรียน"
+    ],
+    answer:2
 },
+
 {
-q:"ข้อใดช่วยเพิ่มความน่าเชื่อถือของข้อมูลออนไลน์",
-options:[
-"มีคนแชร์จำนวนมาก",
-"มีแหล่งที่มาและตรวจสอบกับแหล่งอื่นได้",
-"มีรูปภาพสวย",
-"มีข้อความตัวใหญ่"
-],
-answer:1
+    q:"ข้อใดช่วยตรวจสอบความน่าเชื่อถือของข้อมูลได้ดีที่สุด?",
+    options:[
+        "ดูว่ามีคนแชร์มากหรือไม่",
+        "ตรวจสอบแหล่งที่มาและผู้จัดทำข้อมูล",
+        "ดูว่ามีรูปภาพสวยหรือไม่",
+        "ดูว่าข้อความยาวหรือไม่"
+    ],
+    answer:1
 },
+
 {
-q:"หากได้รับไฟล์จากคนที่ไม่รู้จัก ควรทำอย่างไร",
-options:[
-"เปิดทันที",
-"ส่งต่อ",
-"ตรวจสอบแหล่งที่มาและหลีกเลี่ยงไฟล์ที่น่าสงสัย",
-"ดาวน์โหลดทุกไฟล์"
-],
-answer:2
+    q:"หากได้รับไฟล์จากคนที่ไม่รู้จัก ควรทำอย่างไร?",
+    options:[
+        "เปิดทันที",
+        "ส่งต่อให้เพื่อน",
+        "ตรวจสอบแหล่งที่มาและหลีกเลี่ยงไฟล์ที่น่าสงสัย",
+        "ดาวน์โหลดทุกไฟล์"
+    ],
+    answer:2
 },
+
 {
-q:"ข้อใดเป็นตัวอย่างข้อมูลที่เหมาะสมสำหรับสร้างกราฟคะแนนนักเรียน",
-options:[
-"ชื่อสัตว์เลี้ยง",
-"คะแนนสอบ",
-"สีเสื้อ",
-"เพลงที่ชอบ"
-],
-answer:1
+    q:"หากต้องการทำกราฟแสดงคะแนนของนักเรียน ควรเตรียมข้อมูลใด?",
+    options:[
+        "ชื่อและคะแนน",
+        "สีที่ชอบเท่านั้น",
+        "รหัสผ่าน",
+        "ที่อยู่บ้าน"
+    ],
+    answer:0
 },
+
 {
-q:"หากต้องการเปรียบเทียบคะแนนของนักเรียนหลายคน ควรใช้เครื่องมือใด",
-options:[
-"ตารางข้อมูลหรือโปรแกรมตารางคำนวณ",
-"เครื่องเล่นเพลง",
-"โปรแกรมวาดรูปเท่านั้น",
-"กล้องถ่ายรูป"
-],
-answer:0
+    q:"หากต้องการเปรียบเทียบคะแนนของนักเรียนหลายคน เครื่องมือใดเหมาะสม?",
+    options:[
+        "ตารางหรือโปรแกรมตารางคำนวณ",
+        "โปรแกรมวาดภาพเท่านั้น",
+        "เครื่องเล่นเพลง",
+        "กล้องถ่ายรูป"
+    ],
+    answer:0
 },
+
 {
-q:"ข้อใดเป็นการสื่อสารออนไลน์ที่เหมาะสม",
-options:[
-"ใช้คำสุภาพและคิดก่อนส่ง",
-"ส่งข้อความจำนวนมากรบกวนผู้อื่น",
-"เผยแพร่ข่าวลือ",
-"โพสต์ข้อมูลส่วนตัวของเพื่อน"
-],
-answer:0
+    q:"ข้อใดเป็นการสื่อสารออนไลน์ที่เหมาะสม?",
+    options:[
+        "ใช้ถ้อยคำสุภาพและเคารพผู้อื่น",
+        "เผยแพร่ข้อมูลส่วนตัวของเพื่อน",
+        "สร้างข่าวปลอม",
+        "ล้อเลียนผู้อื่น"
+    ],
+    answer:0
 },
+
 {
-q:"หากเห็นคลิปที่อาจเป็นภาพหรือเสียงที่สร้างด้วย AI ควรทำอย่างไร",
-options:[
-"เชื่อทันที",
-"ตรวจสอบบริบท แหล่งที่มา และข้อมูลประกอบ",
-"แชร์ต่อทันที",
-"นำไปล้อเลียนผู้อื่น"
-],
-answer:1
+    q:"หากสงสัยว่าวิดีโอของบุคคลสำคัญอาจสร้างด้วย AI ควรทำอย่างไร?",
+    options:[
+        "เชื่อทันที",
+        "ตรวจสอบบริบทและแหล่งข่าวที่น่าเชื่อถือ",
+        "แชร์ก่อนแล้วค่อยตรวจ",
+        "ดาวน์โหลดไปเผยแพร่"
+    ],
+    answer:1
 }
+
 ];
 
 
+/* ===================== ป.6 ===================== */
+
 const questionsP6 = [
+
 {
-q:"การแยกปัญหาใหญ่ให้เป็นปัญหาย่อยช่วยในการเขียนโปรแกรมอย่างไร",
-options:[
-"ทำให้ปัญหาซับซ้อนขึ้น",
-"ช่วยวิเคราะห์และแก้ปัญหาเป็นส่วน ๆ",
-"ทำให้ไม่ต้องทดสอบ",
-"ทำให้ไม่ต้องมีข้อมูล"
-],
-answer:1
+    q:"การแยกปัญหาใหญ่ให้เป็นปัญหาย่อยช่วยอย่างไร?",
+    options:[
+        "ทำให้ปัญหาซับซ้อนขึ้น",
+        "ช่วยให้วางแผนและแก้ปัญหาได้ง่ายขึ้น",
+        "ทำให้ข้อมูลหาย",
+        "ทำให้ไม่ต้องวิเคราะห์ปัญหา"
+    ],
+    answer:1
 },
+
 {
-q:"ถ้าต้องสร้างระบบคำนวณคะแนนเฉลี่ย ขั้นตอนใดควรทำก่อน",
-options:[
-"ออกแบบหน้าจอทันที",
-"วิเคราะห์ข้อมูลนำเข้าและวิธีคำนวณ",
-"สร้างเสียงประกอบ",
-"เปลี่ยนสีพื้นหลัง"
-],
-answer:1
+    q:"หากออกแบบระบบคำนวณค่าเฉลี่ย ขั้นตอนแรกที่ควรพิจารณาคืออะไร?",
+    options:[
+        "ตกแต่งหน้าจอ",
+        "วิเคราะห์ข้อมูลนำเข้าและวิธีคำนวณ",
+        "พิมพ์ผลทันที",
+        "ปิดระบบ"
+    ],
+    answer:1
 },
+
 {
-q:"โปรแกรมต้องแสดงเลข 1 ถึง 1,000 วิธีใดเหมาะสมที่สุด",
-options:[
-"เขียนคำสั่ง 1,000 บรรทัด",
-"ใช้โครงสร้างการทำซ้ำ",
-"ใช้คำสั่งสุ่ม",
-"ใช้คำสั่งหยุด"
-],
-answer:1
+    q:"หากต้องการแสดงตัวเลข 1 ถึง 1,000 โปรแกรมควรใช้แนวคิดใด?",
+    options:[
+        "เงื่อนไขเพียงอย่างเดียว",
+        "การทำซ้ำ",
+        "การสุ่ม",
+        "การลบข้อมูล"
+    ],
+    answer:1
 },
+
 {
-q:"โปรแกรมคำนวณค่าเฉลี่ยได้ผลลัพธ์ผิด ทั้งที่สูตรถูกต้อง ควรตรวจสอบสิ่งใด",
-options:[
-"สีของโปรแกรม",
-"ข้อมูลนำเข้าและจำนวนข้อมูล",
-"ภาพพื้นหลัง",
-"เสียงประกอบ"
-],
-answer:1
+    q:"โปรแกรมคำนวณสูตรถูกต้องแต่ผลลัพธ์ผิด ควรตรวจสอบสิ่งใดก่อน?",
+    options:[
+        "สีพื้นหลัง",
+        "ข้อมูลนำเข้าและจำนวนที่ใช้คำนวณ",
+        "ชื่อโปรแกรม",
+        "ขนาดหน้าจอ"
+    ],
+    answer:1
 },
+
 {
-q:"หากต้องออกแบบโปรแกรมตรวจสอบว่านักเรียนสอบผ่านหรือไม่ ควรใช้โครงสร้างใด",
-options:[
-"เงื่อนไข",
-"การวาดภาพ",
-"การสุ่ม",
-"การบันทึกเสียง"
-],
-answer:0
+    q:"การตรวจสอบว่าคะแนนผ่านหรือไม่ผ่านเหมาะกับโครงสร้างใด?",
+    options:[
+        "เงื่อนไข",
+        "การทำซ้ำ",
+        "การสุ่ม",
+        "การจัดรูปภาพ"
+    ],
+    answer:0
 },
+
 {
-q:"ข้อใดเป็นตัวอย่างของ Abstraction หรือการคิดเชิงนามธรรม",
-options:[
-"เก็บรายละเอียดทุกอย่างโดยไม่เลือก",
-"เลือกเฉพาะข้อมูลสำคัญที่เกี่ยวข้องกับปัญหา",
-"เพิ่มข้อมูลที่ไม่เกี่ยวข้อง",
-"คัดลอกข้อมูลทั้งหมด"
-],
-answer:1
+    q:"Abstraction หรือการคิดเชิงนามธรรมมีแนวคิดสำคัญอย่างไร?",
+    options:[
+        "เพิ่มรายละเอียดทุกอย่าง",
+        "เลือกเฉพาะข้อมูลสำคัญและละรายละเอียดที่ไม่จำเป็น",
+        "ลบข้อมูลทั้งหมด",
+        "ทำงานโดยไม่วางแผน"
+    ],
+    answer:1
 },
+
 {
-q:"หากต้องเลือกเส้นทางที่สั้นที่สุดจากโรงเรียนไปห้องสมุด ควรใช้ข้อมูลใด",
-options:[
-"สีของอาคาร",
-"ระยะทางและเส้นทางที่เป็นไปได้",
-"ชื่อเล่นของนักเรียน",
-"เมนูอาหารกลางวัน"
-],
-answer:1
+    q:"หากต้องการหาเส้นทางที่สั้นที่สุด ควรพิจารณาข้อมูลใด?",
+    options:[
+        "สีของถนน",
+        "ระยะทางและเส้นทางที่เป็นไปได้",
+        "ชื่อผู้ขับรถ",
+        "เพลงที่ฟัง"
+    ],
+    answer:1
 },
+
 {
-q:"ข้อใดเป็นวิธี Debug โปรแกรมอย่างเป็นระบบ",
-options:[
-"เดาว่าผิดตรงไหน",
-"ตรวจสอบ Input → Process → Output ทีละขั้น",
-"ลบโปรแกรมทั้งหมด",
-"เปลี่ยนคอมพิวเตอร์"
-],
-answer:1
+    q:"การ Debugging ที่ดีควรทำอย่างไร?",
+    options:[
+        "แก้โค้ดแบบสุ่ม",
+        "ตรวจสอบ Input → Process → Output อย่างเป็นขั้นตอน",
+        "ลบโปรแกรมทั้งหมด",
+        "เปลี่ยนคอมพิวเตอร์"
+    ],
+    answer:1
 },
+
 {
-q:"หากข้อมูลนักเรียนมีชื่อซ้ำกันหลายรายการ ควรทำอย่างไร",
-options:[
-"เพิ่มข้อมูลซ้ำ",
-"ตรวจสอบและจัดการข้อมูลซ้ำ",
-"ลบข้อมูลทั้งหมด",
-"เปลี่ยนชื่อทุกคน"
-],
-answer:1
+    q:"หากฐานข้อมูลนักเรียนมีชื่อซ้ำกัน ควรจัดการอย่างไร?",
+    options:[
+        "ลบข้อมูลทั้งหมด",
+        "ตรวจสอบข้อมูลเพิ่มเติมเพื่อแยกบุคคลให้ถูกต้อง",
+        "เลือกชื่อใดชื่อหนึ่งแบบสุ่ม",
+        "ไม่ต้องแก้ไข"
+    ],
+    answer:1
 },
+
 {
-q:"ข้อใดเป็นข้อมูลที่ควรตรวจสอบก่อนนำไปใช้วิเคราะห์",
-options:[
-"ความถูกต้องและแหล่งที่มา",
-"สีของตาราง",
-"ขนาดตัวอักษร",
-"จำนวนรูปภาพ"
-],
-answer:0
+    q:"ก่อนนำข้อมูลไปวิเคราะห์ ควรตรวจสอบเรื่องใด?",
+    options:[
+        "ความถูกต้องและแหล่งที่มาของข้อมูล",
+        "สีของตาราง",
+        "รูปแบบตัวอักษรเท่านั้น",
+        "จำนวนรูปภาพ"
+    ],
+    answer:0
 },
+
 {
-q:"หากต้องการใช้ AI ช่วยทำรายงาน สิ่งใดสำคัญที่สุด",
-options:[
-"คัดลอกคำตอบทั้งหมดโดยไม่อ่าน",
-"ตรวจสอบความถูกต้องและเรียบเรียงด้วยความเข้าใจของตนเอง",
-"ส่งงานทันที",
-"เชื่อข้อมูลจาก AI ทุกอย่าง"
-],
-answer:1
+    q:"หากใช้ AI ช่วยทำรายงาน นักเรียนควรทำอย่างไร?",
+    options:[
+        "คัดลอกทั้งหมด",
+        "ตรวจสอบข้อมูลและเรียบเรียงด้วยความเข้าใจของตนเอง",
+        "ไม่ต้องอ่านเนื้อหา",
+        "ส่งรหัสผ่านให้ AI"
+    ],
+    answer:1
 },
+
 {
-q:"เหตุใดจึงไม่ควรป้อนรหัสผ่านหรือข้อมูลลับลงใน AI สาธารณะ",
-options:[
-"เพราะทำให้คอมพิวเตอร์ช้าลง",
-"เพราะเป็นข้อมูลสำคัญที่ควรรักษาความปลอดภัย",
-"เพราะ AI พิมพ์ภาษาไทยไม่ได้",
-"เพราะอินเทอร์เน็ตจะหยุดทำงาน"
-],
-answer:1
+    q:"เหตุใดจึงไม่ควรใส่รหัสผ่านหรือข้อมูลลับลงใน AI สาธารณะ?",
+    options:[
+        "เพราะทำให้คอมพิวเตอร์ช้าลง",
+        "เพราะอาจเกิดความเสี่ยงต่อความเป็นส่วนตัวและความปลอดภัย",
+        "เพราะ AI ไม่สามารถอ่านข้อความได้",
+        "เพราะอินเทอร์เน็ตจะหยุดทำงาน"
+    ],
+    answer:1
 },
+
 {
-q:"ข้อใดเป็นวิธีตรวจสอบภาพที่อาจเป็นภาพสร้างด้วย AI",
-options:[
-"ดูว่าภาพสวยหรือไม่",
-"ตรวจสอบแหล่งที่มาและเปรียบเทียบข้อมูลจากหลายแหล่ง",
-"เชื่อจากจำนวนยอดไลก์",
-"แชร์เพื่อถามคนอื่นทันที"
-],
-answer:1
+    q:"หากพบภาพที่สร้างด้วย AI และต้องการตรวจสอบ ควรทำอย่างไร?",
+    options:[
+        "ดูภาพเพียงอย่างเดียว",
+        "ตรวจสอบแหล่งที่มาและเปรียบเทียบกับข้อมูลจากหลายแหล่ง",
+        "แชร์ทันที",
+        "เชื่อเพราะภาพดูสมจริง"
+    ],
+    answer:1
 },
+
 {
-q:"Deepfake คืออะไร",
-options:[
-"การสำรองข้อมูล",
-"สื่อที่ถูกสร้างหรือดัดแปลงด้วยเทคโนโลยี AI จนดูคล้ายของจริง",
-"โปรแกรมตารางคำนวณ",
-"ระบบค้นหาไฟล์"
-],
-answer:1
+    q:"Deepfake คืออะไร?",
+    options:[
+        "โปรแกรมป้องกันไวรัส",
+        "สื่อที่ถูกสร้างหรือดัดแปลงด้วย AI ให้ดูเหมือนบุคคลหรือเหตุการณ์จริง",
+        "ระบบค้นหาเว็บไซต์",
+        "เครื่องมือทำตาราง"
+    ],
+    answer:1
 },
+
 {
-q:"หากพบวิดีโอที่บุคคลสำคัญพูดสิ่งที่ไม่น่าเชื่อ ควรทำอย่างไร",
-options:[
-"แชร์ทันที",
-"ตรวจสอบจากแหล่งข่าวหรือแหล่งข้อมูลที่น่าเชื่อถือ",
-"ตัดต่อเพิ่ม",
-"ส่งให้เพื่อนทุกคน"
-],
-answer:1
+    q:"หากพบคลิปที่อ้างว่าเป็นคำพูดของบุคคลสำคัญ แต่ดูผิดปกติ ควรทำอย่างไร?",
+    options:[
+        "แชร์ทันที",
+        "ตรวจสอบจากแหล่งข่าวที่น่าเชื่อถือ",
+        "เพิ่มข้อความให้ดูน่าสนใจ",
+        "ส่งให้คนอื่นก่อน"
+    ],
+    answer:1
 },
+
 {
-q:"ข้อใดเป็นตัวอย่างของการมี Digital Citizenship ที่ดี",
-options:[
-"เคารพผู้อื่น รักษาข้อมูลส่วนตัว และตรวจสอบข้อมูลก่อนแชร์",
-"ใช้บัญชีของผู้อื่น",
-"เผยแพร่ข่าวลือ",
-"กลั่นแกล้งคนอื่นออนไลน์"
-],
-answer:0
+    q:"ข้อใดเป็นพฤติกรรมของพลเมืองดิจิทัลที่ดี?",
+    options:[
+        "เคารพสิทธิ ความเป็นส่วนตัว และความคิดเห็นของผู้อื่น",
+        "เผยแพร่ข่าวปลอม",
+        "ขโมยบัญชีผู้อื่น",
+        "ใช้ผลงานผู้อื่นโดยไม่อ้างอิง"
+    ],
+    answer:0
 },
+
 {
-q:"หากได้รับข้อความพร้อมลิงก์ให้กรอกรหัสผ่านเพื่อยืนยันบัญชี ควรระวังสิ่งใด",
-options:[
-"Phishing",
-"การทำซ้ำ",
-"การบีบอัดไฟล์",
-"การจัดรูปแบบ"
-],
-answer:0
+    q:"Phishing คือพฤติกรรมใด?",
+    options:[
+        "การหลอกให้ผู้ใช้เปิดเผยข้อมูลสำคัญ",
+        "การสร้างภาพด้วย AI",
+        "การสำรองข้อมูล",
+        "การค้นหาข้อมูล"
+    ],
+    answer:0
 },
+
 {
-q:"หากเว็บไซต์ขอข้อมูลส่วนตัวมากเกินความจำเป็น ควรทำอย่างไร",
-options:[
-"กรอกทั้งหมด",
-"ตรวจสอบความน่าเชื่อถือและพิจารณาว่าจำเป็นหรือไม่",
-"ส่งรหัสผ่านเพิ่ม",
-"แชร์ข้อมูลให้เพื่อน"
-],
-answer:1
+    q:"หากเว็บไซต์ขอข้อมูลส่วนตัวจำนวนมากโดยไม่มีเหตุผล ควรทำอย่างไร?",
+    options:[
+        "กรอกทุกข้อมูล",
+        "ตรวจสอบความจำเป็นและความน่าเชื่อถือของเว็บไซต์",
+        "ส่งรหัสผ่านด้วย",
+        "แชร์ลิงก์ให้เพื่อน"
+    ],
+    answer:1
 },
+
 {
-q:"การนำผลงานของผู้อื่นมาใช้ในรายงานอย่างถูกต้องควรทำอย่างไร",
-options:[
-"อ้างอิงแหล่งที่มาและเคารพลิขสิทธิ์",
-"ลบชื่อเจ้าของผลงาน",
-"บอกว่าเป็นผลงานของตนเอง",
-"เผยแพร่ต่อโดยไม่ระบุแหล่งที่มา"
-],
-answer:0
+    q:"หากนำภาพหรือข้อมูลของผู้อื่นมาใช้ในงาน ควรทำอย่างไร?",
+    options:[
+        "นำมาใช้โดยไม่บอกที่มา",
+        "อ้างอิงแหล่งที่มาและเคารพลิขสิทธิ์",
+        "ลบชื่อเจ้าของผลงาน",
+        "บอกว่าเป็นผลงานของตนเอง"
+    ],
+    answer:1
 },
+
 {
-q:"ถ้าต้องรวบรวมข้อมูลจากหลายเว็บไซต์เพื่อทำรายงาน วิธีใดเหมาะสมที่สุด",
-options:[
-"ใช้เว็บไซต์แรกที่พบ",
-"เปรียบเทียบหลายแหล่ง ตรวจสอบความน่าเชื่อถือ และอ้างอิงแหล่งข้อมูล",
-"เลือกเฉพาะข้อมูลที่ตรงกับความคิดของตนเอง",
-"คัดลอกทุกอย่างจากเว็บไซต์เดียว"
-],
-answer:1
+    q:"หากต้องรวบรวมข้อมูลจากหลายเว็บไซต์เพื่อทำรายงาน ควรทำอย่างไร?",
+    options:[
+        "เลือกเว็บไซต์แรกที่พบ",
+        "เปรียบเทียบ ตรวจสอบ และอ้างอิงแหล่งข้อมูล",
+        "คัดลอกทุกเว็บไซต์",
+        "เลือกข้อมูลที่ตรงกับความคิดเห็นของตนเองเท่านั้น"
+    ],
+    answer:1
 }
+
 ];
 
 
@@ -1675,8 +1602,11 @@ answer:1
 
 let studentClass = "ป.5";
 let questions = questionsP5;
+
 let currentQuestion = 0;
+
 let userAnswers = [];
+
 let submitted = false;
 
 
@@ -1684,19 +1614,15 @@ let submitted = false;
    SELECT CLASS
 ========================================================= */
 
-function selectClass(button,grade){
-
-    if(submitted) return;
+function selectClass(button, grade){
 
     studentClass = grade;
 
-    document
-        .querySelectorAll(".class-btn")
-        .forEach(btn=>{
-            btn.classList.remove("selected");
-        });
+    document.querySelectorAll(".grade-btn")
+        .forEach(btn => btn.classList.remove("active"));
 
-    button.classList.add("selected");
+    button.classList.add("active");
+
 }
 
 
@@ -1709,35 +1635,39 @@ function loadQuestions(){
     if(studentClass === "ป.4"){
         questions = questionsP4;
     }
+
     else if(studentClass === "ป.5"){
         questions = questionsP5;
     }
-    else{
+
+    else if(studentClass === "ป.6"){
         questions = questionsP6;
     }
+
 }
 
 
 /* =========================================================
-   START
+   START QUIZ
 ========================================================= */
 
 function startQuiz(){
 
     const name =
-        document
-        .getElementById("studentName")
-        .value
-        .trim();
+        document.getElementById("studentName")
+        .value.trim();
 
     if(name === ""){
 
-        alert(
-            "กรุณากรอกชื่อและนามสกุลก่อนเริ่มทำแบบทดสอบ"
-        );
+        alert("กรุณากรอกชื่อและนามสกุลก่อนเริ่มทำแบบทดสอบ");
+
+        document
+            .getElementById("studentName")
+            .focus();
 
         return;
     }
+
 
     loadQuestions();
 
@@ -1748,21 +1678,19 @@ function startQuiz(){
 
     submitted = false;
 
-    document
-        .getElementById("startScreen")
-        .classList.add("hidden");
 
     document
-        .getElementById("resultScreen")
-        .classList.add("hidden");
+        .getElementById("startScreen")
+        .style.display = "none";
 
     document
         .getElementById("quizScreen")
-        .classList.remove("hidden");
+        .style.display = "block";
 
     createQuestionMap();
 
     showQuestion();
+
 }
 
 
@@ -1772,51 +1700,46 @@ function startQuiz(){
 
 function showQuestion(){
 
-    const q =
+    const question =
         questions[currentQuestion];
+
 
     document
         .getElementById("questionNumber")
         .textContent =
         `ข้อ ${currentQuestion + 1} / ${questions.length}`;
 
-    const answeredCount =
-        userAnswers.filter(
-            answer => answer !== null
-        ).length;
+
+    const answered =
+        userAnswers.filter(a => a !== null).length;
+
 
     document
         .getElementById("scoreDisplay")
         .textContent =
-        `ตอบแล้ว ${answeredCount} / ${questions.length}`;
+        `ตอบแล้ว ${answered} / ${questions.length}`;
+
 
     const progress =
         ((currentQuestion + 1) / questions.length) * 100;
+
 
     document
         .getElementById("progressBar")
         .style.width =
         progress + "%";
 
+
     document
         .getElementById("questionText")
         .textContent =
-        q.q;
+        question.q;
 
-    let difficulty = "ความยาก 50%";
-
-    if(studentClass === "ป.4"){
-        difficulty = "ความยาก 30%";
-    }
-
-    if(studentClass === "ป.6"){
-        difficulty = "ความยาก 70%";
-    }
 
     document
         .getElementById("difficultyBadge")
         .textContent =
-        difficulty;
+        "ระดับความยาก 40%";
 
 
     const options =
@@ -1825,7 +1748,7 @@ function showQuestion(){
     options.innerHTML = "";
 
 
-    q.options.forEach((option,index)=>{
+    question.options.forEach((option, index) => {
 
         const button =
             document.createElement("button");
@@ -1835,50 +1758,51 @@ function showQuestion(){
         button.textContent =
             `${String.fromCharCode(65 + index)}. ${option}`;
 
+
         if(userAnswers[currentQuestion] === index){
 
             button.classList.add("selected");
 
         }
 
-        button.onclick = function(){
 
-            chooseAnswer(index);
+        button.onclick =
+            () => chooseAnswer(index);
 
-        };
 
         options.appendChild(button);
 
     });
 
 
-    /* Previous */
+    const prevBtn =
+        document.getElementById("prevBtn");
 
-    document
-        .getElementById("prevBtn")
-        .disabled =
+    prevBtn.disabled =
         currentQuestion === 0;
 
 
-    /* Next */
-
     const nextBtn =
         document.getElementById("nextBtn");
+
 
     if(currentQuestion === questions.length - 1){
 
         nextBtn.textContent =
             "ตรวจสอบคำตอบ →";
 
-    }else{
+    }
+
+    else{
 
         nextBtn.textContent =
-            "ข้อต่อไป →";
+            "ข้อถัดไป →";
 
     }
 
 
     updateQuestionMap();
+
 }
 
 
@@ -1888,61 +1812,62 @@ function showQuestion(){
 
 function chooseAnswer(index){
 
-    if(submitted) return;
-
     userAnswers[currentQuestion] =
         index;
 
+
     document
         .querySelectorAll(".option")
-        .forEach((btn,i)=>{
+        .forEach((button, i) => {
 
-            btn.classList.remove("selected");
-
-            if(i === index){
-
-                btn.classList.add("selected");
-
-            }
+            button.classList.toggle(
+                "selected",
+                i === index
+            );
 
         });
 
+
     updateQuestionMap();
 
-    const answeredCount =
-        userAnswers.filter(
-            answer => answer !== null
-        ).length;
+    const answered =
+        userAnswers.filter(a => a !== null).length;
+
 
     document
         .getElementById("scoreDisplay")
         .textContent =
-        `ตอบแล้ว ${answeredCount} / ${questions.length}`;
+        `ตอบแล้ว ${answered} / ${questions.length}`;
+
 }
 
 
 /* =========================================================
-   NEXT
+   NEXT QUESTION
 ========================================================= */
 
 function nextQuestion(){
 
-    if(currentQuestion < questions.length - 1){
+    if(currentQuestion <
+       questions.length - 1){
 
         currentQuestion++;
 
         showQuestion();
 
-    }else{
+    }
+
+    else{
 
         checkBeforeSubmit();
 
     }
+
 }
 
 
 /* =========================================================
-   PREVIOUS
+   PREVIOUS QUESTION
 ========================================================= */
 
 function previousQuestion(){
@@ -1954,6 +1879,7 @@ function previousQuestion(){
         showQuestion();
 
     }
+
 }
 
 
@@ -1963,23 +1889,23 @@ function previousQuestion(){
 
 function createQuestionMap(){
 
-    const container =
+    const map =
         document.getElementById("mapButtons");
 
-    container.innerHTML = "";
+    map.innerHTML = "";
 
-    questions.forEach((q,index)=>{
+
+    questions.forEach((q,index) => {
 
         const button =
             document.createElement("button");
 
-        button.className =
-            "map-btn";
+        button.className = "map-btn";
 
         button.textContent =
             index + 1;
 
-        button.onclick = function(){
+        button.onclick = () => {
 
             currentQuestion = index;
 
@@ -1987,37 +1913,38 @@ function createQuestionMap(){
 
         };
 
-        container.appendChild(button);
+
+        map.appendChild(button);
 
     });
+
 }
 
+
+/* =========================================================
+   UPDATE QUESTION MAP
+========================================================= */
 
 function updateQuestionMap(){
 
     const buttons =
         document.querySelectorAll(".map-btn");
 
-    buttons.forEach((button,index)=>{
 
-        button.classList.remove(
+    buttons.forEach((button,index) => {
+
+        button.classList.toggle(
             "answered",
-            "current"
+            userAnswers[index] !== null
         );
 
-        if(userAnswers[index] !== null){
-
-            button.classList.add("answered");
-
-        }
-
-        if(index === currentQuestion){
-
-            button.classList.add("current");
-
-        }
+        button.classList.toggle(
+            "current",
+            index === currentQuestion
+        );
 
     });
+
 }
 
 
@@ -2027,49 +1954,55 @@ function updateQuestionMap(){
 
 function checkBeforeSubmit(){
 
-    const unanswered =
-        userAnswers.filter(
-            answer => answer === null
-        ).length;
+    const unanswered = [];
 
-    if(unanswered > 0){
 
-        alert(
-            `ยังมีข้อที่ไม่ได้ตอบ ${unanswered} ข้อ\n` +
-            "กรุณาตอบให้ครบทุกข้อก่อนส่งคำตอบ"
-        );
+    userAnswers.forEach((answer,index) => {
 
-        /* ไปยังข้อแรกที่ยังไม่ได้ตอบ */
+        if(answer === null){
 
-        const firstUnanswered =
-            userAnswers.findIndex(
-                answer => answer === null
-            );
-
-        if(firstUnanswered !== -1){
-
-            currentQuestion =
-                firstUnanswered;
-
-            showQuestion();
+            unanswered.push(index + 1);
 
         }
+
+    });
+
+
+    if(unanswered.length > 0){
+
+        alert(
+            "ยังมีข้อที่ไม่ได้ตอบจำนวน " +
+            unanswered.length +
+            " ข้อ\n\n" +
+            "กรุณาตอบให้ครบก่อนส่งคำตอบ\n" +
+            "ข้อที่ยังไม่ได้ตอบ: " +
+            unanswered.join(", ")
+        );
+
+
+        currentQuestion =
+            unanswered[0] - 1;
+
+        showQuestion();
 
         return;
 
     }
 
+
     const confirmSubmit =
         confirm(
-            "คุณตอบครบทุกข้อแล้ว\n\n" +
-            "ต้องการส่งคำตอบและดูคะแนนพร้อมเฉลยหรือไม่?"
+            "ตอบครบทั้ง 20 ข้อแล้ว\n\n" +
+            "ต้องการส่งคำตอบและดูคะแนนหรือไม่?"
         );
+
 
     if(confirmSubmit){
 
         submitQuiz();
 
     }
+
 }
 
 
@@ -2079,26 +2012,18 @@ function checkBeforeSubmit(){
 
 function submitQuiz(){
 
-    if(submitted) return;
-
-    const unanswered =
-        userAnswers.filter(
-            answer => answer === null
-        ).length;
-
-    if(unanswered > 0){
-
-        checkBeforeSubmit();
-
+    if(submitted){
         return;
-
     }
+
 
     submitted = true;
 
+
     let score = 0;
 
-    questions.forEach((question,index)=>{
+
+    questions.forEach((question,index) => {
 
         if(
             userAnswers[index] ===
@@ -2111,7 +2036,9 @@ function submitQuiz(){
 
     });
 
+
     showResult(score);
+
 }
 
 
@@ -2123,67 +2050,18 @@ function showResult(score){
 
     document
         .getElementById("quizScreen")
-        .classList.add("hidden");
+        .style.display = "none";
+
 
     document
         .getElementById("resultScreen")
-        .classList.remove("hidden");
+        .style.display = "block";
 
 
     const name =
         document
-        .getElementById("studentName")
-        .value
-        .trim();
-
-
-    const percentage =
-        Math.round(
-            (score / questions.length) * 100
-        );
-
-
-    const wrong =
-        questions.length - score;
-
-
-    let level = "";
-
-    let message = "";
-
-
-    if(percentage >= 90){
-
-        level = "ยอดเยี่ยม";
-
-        message =
-        "🌟 ยอดเยี่ยมมาก! มีความเข้าใจวิทยาการคำนวณและเทคโนโลยีดิจิทัลเป็นอย่างดี";
-
-    }
-    else if(percentage >= 75){
-
-        level = "ดีมาก";
-
-        message =
-        "😊 ดีมาก! มีความเข้าใจเนื้อหาและสามารถประยุกต์ใช้เทคโนโลยีได้ดี";
-
-    }
-    else if(percentage >= 50){
-
-        level = "ผ่าน";
-
-        message =
-        "🌱 ผ่านเกณฑ์ ควรทบทวนเรื่อง AI ความปลอดภัยไซเบอร์ และการคิดเชิงคำนวณเพิ่มเติม";
-
-    }
-    else{
-
-        level = "ควรพัฒนา";
-
-        message =
-        "📚 ควรทบทวนบทเรียนและลองทำแบบทดสอบอีกครั้ง";
-
-    }
+            .getElementById("studentName")
+            .value.trim();
 
 
     document
@@ -2195,13 +2073,25 @@ function showResult(score){
     document
         .getElementById("resultScore")
         .textContent =
-        `${score} / ${questions.length}`;
+        score;
+
+
+    const correct = score;
+
+    const wrong =
+        questions.length - score;
+
+
+    const percentage =
+        Math.round(
+            (score / questions.length) * 100
+        );
 
 
     document
         .getElementById("correctCount")
         .textContent =
-        score;
+        correct;
 
 
     document
@@ -2213,7 +2103,48 @@ function showResult(score){
     document
         .getElementById("percentage")
         .textContent =
-        `${percentage}%`;
+        percentage + "%";
+
+
+    let level = "";
+    let message = "";
+
+
+    if(percentage >= 90){
+
+        level = "ยอดเยี่ยม";
+
+        message =
+            "🌟 ยอดเยี่ยมมาก! มีความรู้และทักษะด้านวิทยาการคำนวณที่ดีมาก";
+
+    }
+
+    else if(percentage >= 75){
+
+        level = "ดีมาก";
+
+        message =
+            "👏 ดีมาก! มีความเข้าใจเนื้อหาได้ดี ควรฝึกฝนเพิ่มเติมอีกเล็กน้อย";
+
+    }
+
+    else if(percentage >= 50){
+
+        level = "ผ่าน";
+
+        message =
+            "😊 ผ่านเกณฑ์ ควรทบทวนเนื้อหาบางเรื่องเพิ่มเติม";
+
+    }
+
+    else{
+
+        level = "ควรพัฒนา";
+
+        message =
+            "🌱 ควรทบทวนบทเรียนและฝึกทำแบบฝึกหัดเพิ่มเติม";
+
+    }
 
 
     document
@@ -2230,10 +2161,6 @@ function showResult(score){
 
     createAnswerReview();
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
 }
 
 
@@ -2243,22 +2170,30 @@ function showResult(score){
 
 function createAnswerReview(){
 
-    const review =
+    const container =
         document.getElementById("answerReview");
 
-    review.innerHTML = "";
+    container.innerHTML =
+        `<div class="review-title">
+            📋 เฉลยและตรวจคำตอบ
+         </div>`;
 
 
-    questions.forEach((question,index)=>{
-
-        const userAnswer =
-            userAnswers[index];
-
-        const correctAnswer =
-            question.answer;
+    questions.forEach((question,index) => {
 
         const isCorrect =
-            userAnswer === correctAnswer;
+            userAnswers[index] ===
+            question.answer;
+
+
+        const studentAnswer =
+            userAnswers[index] !== null
+            ? question.options[userAnswers[index]]
+            : "ไม่ได้ตอบ";
+
+
+        const correctAnswer =
+            question.options[question.answer];
 
 
         const item =
@@ -2267,63 +2202,49 @@ function createAnswerReview(){
 
         item.className =
             "review-item " +
-            (
-                isCorrect
-                ? "correct-review"
-                : "wrong-review"
-            );
-
-
-        const status =
-            isCorrect
-            ? "✓ ตอบถูก"
-            : "✗ ตอบผิด";
-
-
-        const statusClass =
-            isCorrect
-            ? "correct"
-            : "wrong";
-
-
-        const userAnswerText =
-            `${String.fromCharCode(65 + userAnswer)}. ${question.options[userAnswer]}`;
-
-
-        const correctAnswerText =
-            `${String.fromCharCode(65 + correctAnswer)}. ${question.options[correctAnswer]}`;
+            (isCorrect ? "correct" : "wrong");
 
 
         item.innerHTML = `
 
-            <div class="status ${statusClass}">
-                ${status}
-            </div>
-
             <div class="review-question">
-                ข้อ ${index + 1}. ${question.q}
+                ${index + 1}. ${question.q}
             </div>
 
-            <div class="review-answer my-answer">
-                👤 คำตอบของนักเรียน:
-                <strong>
-                    ${userAnswerText}
-                </strong>
+            <div class="answer-line">
+                ผลการตอบ:
+                <span class="${
+                    isCorrect
+                    ? "correct-text"
+                    : "wrong-text"
+                }">
+                    ${
+                        isCorrect
+                        ? "✓ ตอบถูก"
+                        : "✗ ตอบผิด"
+                    }
+                </span>
             </div>
 
-            <div class="review-answer correct-answer">
-                ✅ เฉลย:
-                <strong>
-                    ${correctAnswerText}
+            <div class="answer-line">
+                คำตอบของนักเรียน:
+                <strong>${studentAnswer}</strong>
+            </div>
+
+            <div class="answer-line">
+                เฉลย:
+                <strong class="correct-text">
+                    ${correctAnswer}
                 </strong>
             </div>
 
         `;
 
 
-        review.appendChild(item);
+        container.appendChild(item);
 
     });
+
 }
 
 
@@ -2333,33 +2254,53 @@ function createAnswerReview(){
 
 function restartQuiz(){
 
-    submitted = false;
-
     currentQuestion = 0;
 
     userAnswers = [];
 
+    submitted = false;
+
+
     document
         .getElementById("resultScreen")
-        .classList.add("hidden");
+        .style.display = "none";
+
 
     document
         .getElementById("quizScreen")
-        .classList.add("hidden");
+        .style.display = "none";
+
 
     document
         .getElementById("startScreen")
-        .classList.remove("hidden");
+        .style.display = "block";
+
 
     document
         .getElementById("studentName")
         .value = "";
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
 }
+
+
+/* =========================================================
+   INITIALIZE
+========================================================= */
+
+document
+    .getElementById("studentName")
+    .addEventListener(
+        "keydown",
+        function(event){
+
+            if(event.key === "Enter"){
+
+                startQuiz();
+
+            }
+
+        }
+    );
 
 </script>
 
